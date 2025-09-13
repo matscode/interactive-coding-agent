@@ -65,6 +65,7 @@ Once copied, the rules will automatically apply when you start coding sessions i
 | **Windsurf** | IDE | ✅ Tested |
 | **Codex** | IDE | ⏳ Not Tested Yet |
 | **Claude Code** | IDE | ⏳ Not Tested Yet |
+| **GitHub Copilot** | IDE | ❌ Not Working Yet |
 | **Gemini** | CLI | ❌ Not Working Yet |
 | **Gemini Code Assist (VS Code)** | IDE | ❌ Not Working Yet |
 
