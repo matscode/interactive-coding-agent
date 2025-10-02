@@ -1,4 +1,6 @@
-# Interactive Coding Agent
+# Interactive Coding Agent Rules
+
+---
 
 ## Overview
 
@@ -66,22 +68,43 @@ Agent **MUST STOP** and ask questions when encountering:
 
 ⚠️ **CRITICAL EXECUTION RULE**: When user input is required, you **MUST EXECUTE** the interactive command using the `run_command` tool, **NEVER** display it as text or code block.
 
-**MANDATORY FORMAT**: Use `read` command for interactive input:
+⚠️ **OPERATING SYSTEM DETECTION**: Before executing interactive commands, agents must determine the target operating system and use the appropriate command syntax.
 
+**MANDATORY FORMAT**: Use interactive input commands based on operating system:
+
+**Unix/Linux/macOS:**
 ```bash
 echo "[Question]?"; read answer; echo "You selected: $answer"
 ```
 
+**Windows (Command Prompt):**
+```cmd
+echo [Question]? & set /p answer= & echo You selected: %answer%
+```
+
+**Windows (PowerShell):**
+```powershell
+Write-Host "[Question]?" -NoNewline; $answer = Read-Host; Write-Host "You selected: $answer"
+```
+
 **EXECUTION REQUIREMENT**: 
 - **MUST** call `run_command` tool with the interactive command
+- **MUST** use appropriate syntax for target operating system
 - **FORBIDDEN** to show command as text/markdown without execution
 - **VIOLATION**: Displaying interactive commands as text = CRITICAL FAILURE
 
 Example of CORRECT execution:
 ```bash
+# Unix/Linux/macOS
 echo "Ball color? (red/blue/yellow): "; read answer; echo "You selected: $answer"
+
+# Windows CMD
+echo Ball color? (red/blue/yellow): & set /p answer= & echo You selected: %answer%
+
+# Windows PowerShell
+Write-Host "Ball color? (red/blue/yellow): " -NoNewline; $answer = Read-Host; Write-Host "You selected: $answer"
 ```
-**This MUST be executed via run_command tool, NOT shown as text**
+**These MUST be executed via run_command tool, NOT shown as text**
 
 ---
 
@@ -94,9 +117,31 @@ echo "Ball color? (red/blue/yellow): "; read answer; echo "You selected: $answer
 4. **FORBIDDEN** to display interactive commands in chat as text/code blocks
 
 **CORRECT TOOL USAGE:**
+
+**Unix/Linux/macOS:**
 ```json
 {
   "command": "echo 'Your question here (option1/option2): '; read answer; echo 'You selected: $answer'",
+  "blocking": true,
+  "target_terminal": "new",
+  "requires_approval": false
+}
+```
+
+**Windows (Command Prompt):**
+```json
+{
+  "command": "echo Your question here (option1/option2): & set /p answer= & echo You selected: %answer%",
+  "blocking": true,
+  "target_terminal": "new", 
+  "requires_approval": false
+}
+```
+
+**Windows (PowerShell):**
+```json
+{
+  "command": "Write-Host 'Your question here (option1/option2): ' -NoNewline; $answer = Read-Host; Write-Host 'You selected: $answer'",
   "blocking": true,
   "target_terminal": "new",
   "requires_approval": false
@@ -114,13 +159,37 @@ echo "Ball color? (red/blue/yellow): "; read answer; echo "You selected: $answer
 **MUST IMMEDIATELY STOP AND ASK** for:
 
 1. **Ambiguous Requirements** - Vague terms, multiple interpretations
+   
+   **Unix/Linux/macOS:**
    ```bash
    echo "'Responsive' - mobile-first or desktop-first? (mobile/desktop): "; read answer
    ```
+   
+   **Windows (CMD):**
+   ```cmd
+   echo 'Responsive' - mobile-first or desktop-first? (mobile/desktop): & set /p answer=
+   ```
+   
+   **Windows (PowerShell):**
+   ```powershell
+   Write-Host "'Responsive' - mobile-first or desktop-first? (mobile/desktop): " -NoNewline; $answer = Read-Host
+   ```
 
 2. **Design Decisions** - Multiple valid patterns (type vs interface, hooks vs classes)
+   
+   **Unix/Linux/macOS:**
    ```bash
    echo "State management: Redux, Zustand, or other? (redux/zustand/other): "; read answer
+   ```
+   
+   **Windows (CMD):**
+   ```cmd
+   echo State management: Redux, Zustand, or other? (redux/zustand/other): & set /p answer=
+   ```
+   
+   **Windows (PowerShell):**
+   ```powershell
+   Write-Host "State management: Redux, Zustand, or other? (redux/zustand/other): " -NoNewline; $answer = Read-Host
    ```
 
 3. **Library/Tool Choices** - External dependencies, frameworks
@@ -128,8 +197,20 @@ echo "Ball color? (red/blue/yellow): "; read answer; echo "You selected: $answer
 5. **Project Direction** - Multiple valid next steps
 6. **Project Rules** - Coding standards that may be codified
 7. **Session Closure** 🛑 **ABSOLUTELY MANDATORY**
+   
+   **Unix/Linux/macOS:**
    ```bash
    echo "Done or want changes? (done/adjust): "; read answer
+   ```
+   
+   **Windows (CMD):**
+   ```cmd
+   echo Done or want changes? (done/adjust): & set /p answer=
+   ```
+   
+   **Windows (PowerShell):**
+   ```powershell
+   Write-Host "Done or want changes? (done/adjust): " -NoNewline; $answer = Read-Host
    ```
 
 ---
@@ -141,8 +222,20 @@ echo "Ball color? (red/blue/yellow): "; read answer; echo "You selected: $answer
    - ❌ "How should the ball bounce?"
 
 2. **Provide Context** - Explain why it matters, include implications
+   
+   **Unix/Linux/macOS:**
    ```bash
    echo "Testing: Jest (broad support) vs Vitest (faster). Preference? (jest/vitest): "; read answer
+   ```
+   
+   **Windows (CMD):**
+   ```cmd
+   echo Testing: Jest (broad support) vs Vitest (faster). Preference? (jest/vitest): & set /p answer=
+   ```
+   
+   **Windows (PowerShell):**
+   ```powershell
+   Write-Host "Testing: Jest (broad support) vs Vitest (faster). Preference? (jest/vitest): " -NoNewline; $answer = Read-Host
    ```
 
 3. **Offer Options** - Clear choices, numbered, include "other"
@@ -152,6 +245,7 @@ echo "Ball color? (red/blue/yellow): "; read answer; echo "You selected: $answer
 
 ## Examples
 
+**Unix/Linux/macOS:**
 ```bash
 # Simple clarification
 echo "Animation: auto-start or user-triggered? (auto/user): "; read answer
@@ -161,6 +255,30 @@ echo "Project direction:\n1. Ball animation\n2. Card game\n3. New project\nChoic
 
 # Detailed requirements
 echo "Ball color: "; read color; echo "Size (small/medium/large): "; read size
+```
+
+**Windows (Command Prompt):**
+```cmd
+# Simple clarification
+echo Animation: auto-start or user-triggered? (auto/user): & set /p answer=
+
+# Multiple choice
+echo Project direction: & echo 1. Ball animation & echo 2. Card game & echo 3. New project & echo Choice (1-3): & set /p choice=
+
+# Detailed requirements
+echo Ball color: & set /p color= & echo Size (small/medium/large): & set /p size=
+```
+
+**Windows (PowerShell):**
+```powershell
+# Simple clarification
+Write-Host "Animation: auto-start or user-triggered? (auto/user): " -NoNewline; $answer = Read-Host
+
+# Multiple choice
+Write-Host "Project direction:`n1. Ball animation`n2. Card game`n3. New project`nChoice (1-3): " -NoNewline; $choice = Read-Host
+
+# Detailed requirements
+Write-Host "Ball color: " -NoNewline; $color = Read-Host; Write-Host "Size (small/medium/large): " -NoNewline; $size = Read-Host
 ```
 
 ---
