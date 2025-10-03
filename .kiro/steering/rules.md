@@ -4,7 +4,7 @@
 
 **BEFORE ANY CODING SESSION, YOU ARE REQUIRED TO:**
 
-1. **OPEN** → **[agents/index.rules.md](./agents/index.rules.md)**
+1. **OPEN** → **[rules/index.rules.md](./rules/index.rules.md)**
 2. **READ** → All mandatory standards and core principles
 3. **IMPLEMENT** → Every rule and compliance checklist
 
@@ -12,7 +12,7 @@
 
 ## Complete Interactive Rules
 
-@./agents/index.rules.md
+@./rules/index.rules.md
 
 ## Key Requirements
 

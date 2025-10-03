@@ -167,7 +167,7 @@ Before creating any spec, agents MUST ask these questions to ensure optimal docu
 2. **📝 FILE CREATION:**
    - **MANDATORY DIRECTORY:** File MUST be created in `project-spec/` directory - NO EXCEPTIONS
    - **MANDATORY NAMING:** Use exact convention: `[decision-topic].spec.md` with kebab-case
-   - **FORBIDDEN LOCATIONS:** NEVER create spec files in root, `agents/`, or any other directory
+   - **FORBIDDEN LOCATIONS:** NEVER create spec files in root, `rules/`, or any other directory
    - **MANDATORY EXTENSION:** File MUST end with `.spec.md` - NOT `.md` or other extensions
    - **EXAMPLES:** `react-state-management.spec.md`, `database-choice.spec.md`, `testing-framework.spec.md`
    - **VIOLATION CONSEQUENCES:** Creating spec files in wrong location = CRITICAL VIOLATION

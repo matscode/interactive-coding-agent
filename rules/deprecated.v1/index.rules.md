@@ -4,8 +4,8 @@
 
 **REQUIRED READING:**
 
-1. **[agents/project-spec.rules.md](project-spec.rules.md)** - Project specification and decision documentation requirements
-2. **[agents/interactive-coding.rules.md](interactive-coding.rules.md)** - Core interactive coding rules
+1. **[rules/project-spec.rules.md](project-spec.rules.md)** - Project specification and decision documentation requirements
+2. **[rules/interactive-coding.rules.md](interactive-coding.rules.md)** - Core interactive coding rules
 
 **FAILURE TO READ AND FOLLOW ALL RULES = CRITICAL VIOLATION**
 
@@ -13,7 +13,7 @@
 
 ## 📁 FILE NAMING CONVENTIONS
 
-**AGENTS FOLDER (`agents/`):**
+**RULES FOLDER (`rules/`):**
 - **`.rules.md`** - Agent behavior and enforcement rules
 - Examples: `interactive-coding.rules.md`, `project-spec.rules.md`
 
@@ -24,7 +24,7 @@
 **CONVENTION RULES:**
 - `.rules` files define HOW agents must behave and enforce standards
 - `.spec` files document WHAT decisions have been made for the project
-- All rule files in `agents/` folder MUST use `.rules.md` extension
+- All rule files in `rules/` folder MUST use `.rules.md` extension
 - All specification files in `project-spec/` folder MUST use `.spec.md` extension
 
 ---
