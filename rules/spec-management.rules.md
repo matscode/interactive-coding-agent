@@ -70,12 +70,14 @@ When coding agents need context for:
 4. **ASK CLARIFYING QUESTIONS** - **USE `run_command` TOOL** for all questions - **MUST FOLLOW** [rules/interactive-input.rules.md](./interactive-input.rules.md) for context on using run_command tool
 5. **RESEARCH OPTIONS** - Present alternatives with trade-offs
 6. **PROPOSE SPECIFICATION** - Create spec file with decision rationale
-7. **WAIT FOR APPROVAL** - Do not implement until user approves
+7. **WAIT FOR APPROVAL** - **USE `run_command` TOOL** for approval questions - **MUST FOLLOW** [rules/interactive-input.rules.md](./interactive-input.rules.md) for context on using run_command tool
 8. **RE-READ SPECIFICATIONS** - **MANDATORY:** Read all relevant specs again after approval but before implementation to ensure most current information
 9. **IMPLEMENT ACCORDING TO SPEC** - Follow approved specification exactly
 
 **AGENT QUESTIONING PROTOCOL FOR SPECIFICATION DOCUMENTATION:**
 Before creating any specification file, agents MUST ask these questions to ensure optimal documentation:
+
+**USE `run_command` TOOL** for all questions - **MUST FOLLOW** [rules/interactive-input.rules.md](./interactive-input.rules.md) for context on using run_command tool
 
 **DECISION CLARITY:**
 - "What is your final decision? (If not explicitly stated)"
@@ -97,7 +99,7 @@ Before creating any specification file, agents MUST ask these questions to ensur
 - "How does this impact the existing codebase/architecture?"
 - "Are there any future considerations or migration paths to document?"
 
-Follow [rules/interactive-input.rules.md](./interactive-input.rules.md) for all user interaction protocols when executing these questions.
+**USE `run_command` TOOL** for all questions - **MUST FOLLOW** [rules/interactive-input.rules.md](./interactive-input.rules.md) for context on using run_command tool when executing these questions.
 
 **RESEARCH REQUIREMENTS:**
 - **MANDATORY RESEARCH:** Perform online research for current best practices, latest versions, and community consensus before making decisions
@@ -225,7 +227,7 @@ Follow [rules/interactive-input.rules.md](./interactive-input.rules.md) for all 
 2. **MANDATORY INDEX CHECK:** Check `project-spec/index.spec.md` for related decisions
 3. **FORBIDDEN DUPLICATES:** NEVER create duplicate specs - merge with existing if similar
 4. **RESEARCH REQUIREMENT:** Perform online research for industry-standard practices from last 12 months with >1000 GitHub stars OR official documentation recommendations
-5. **CONTEXT GATHERING:** Follow [rules/interactive-input.rules.md](./interactive-input.rules.md) for all user interaction requirements
+5. **CONTEXT GATHERING:** **USE `run_command` TOOL** for all questions - **MUST FOLLOW** [rules/interactive-input.rules.md](./interactive-input.rules.md) for context on using run_command tool
 6. **VERIFICATION:** Confirm no existing spec covers the same decision
 
 **SPECIFICATION FILE CREATION:**

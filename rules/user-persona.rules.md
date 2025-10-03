@@ -40,7 +40,7 @@ PRESENT available options:
 1. Predefined personas (list discovered options from directory)
 2. Custom persona option
 
-WAIT for user selection following [rules/interactive-input.rules.md](./interactive-input.rules.md) protocols
+WAIT for user selection following **USE `run_command` TOOL** for all questions - **MUST FOLLOW** [rules/interactive-input.rules.md](./interactive-input.rules.md) for context on using run_command tool
 ```
 
 ### Step 3: Handle User Selection
