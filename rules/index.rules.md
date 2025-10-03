@@ -2,6 +2,8 @@
 
 🚨 **MANDATORY: YOU MUST READ ALL REQUIRED RULE FILES** 🚨
 
+**VIOLATION ENFORCEMENT:** All violations of rules in this project are subject to the universal violation enforcement system defined in [rules/violation-enforcement.rules.md](./violation-enforcement.rules.md).
+
 ---
 
 ## REQUIRED READING
@@ -11,7 +13,8 @@
 1. **[rules/user-persona.rules.md](./user-persona.rules.md)** - User persona detection and adaptive communication
 2. **[rules/core-principles.rules.md](./core-principles.rules.md)** - Core agent behavior and workflow principles
 3. **[rules/spec-management.rules.md](./spec-management.rules.md)** - Project specification and decision documentation requirements
-4. **[rules/interactive-input.rules.md](./interactive-input.rules.md)** - Interactive terminal input and user clarification protocols  
+4. **[rules/interactive-input.rules.md](./interactive-input.rules.md)** - Interactive terminal input and user clarification protocols
+5. **[rules/violation-enforcement.rules.md](./violation-enforcement.rules.md)** - Universal violation enforcement system and compliance protocols  
 
 **FAILURE TO READ AND FOLLOW ALL RULES = CRITICAL VIOLATION**
 

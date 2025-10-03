@@ -4,6 +4,8 @@
 
 This file defines the fundamental workflow and core principles that ALL coding agents must follow during any coding session. These are the foundational rules that govern how agents think, research, decide, and implement.
 
+**VIOLATION ENFORCEMENT:** All violations of rules in this file are subject to the universal violation enforcement system defined in [rules/violation-enforcement.rules.md](./violation-enforcement.rules.md).
+
 ---
 
 ## CORE AGENT WORKFLOW
@@ -29,9 +31,9 @@ This file defines the fundamental workflow and core principles that ALL coding a
 - **IDENTIFY** gaps where new specifications might be needed
 
 ### 4. ASK FOR CLARIFICATION
-- **PAUSE IMPLEMENTATION** if any ambiguity exists
-- **USE INTERACTIVE INPUT** to gather missing requirements
-- **CLARIFY** technical decisions that aren't documented
+
+**CLARIFICATION PROTOCOL:**
+- Follow [rules/interactive-input.rules.md](./interactive-input.rules.md) for all user interaction requirements
 - **CONFIRM** understanding before proceeding
 
 ### 5. CREATE SPECIFICATION (IF NEEDED)
@@ -41,12 +43,14 @@ This file defines the fundamental workflow and core principles that ALL coding a
 - **UPDATE** `project-specs/index.spec.md` immediately
 
 ### 6. GET APPROVAL FOR IMPLEMENTATION
-- **PRESENT** implementation plan based on specifications
-- **EXPLAIN** what will be built and how
+
+**APPROVAL PROTOCOL:**
+- Follow [rules/interactive-input.rules.md](./interactive-input.rules.md) for all user interaction requirements
 - **WAIT** for explicit user approval before coding
 - **CONFIRM** implementation steps align with specifications
 
 ### 7. IMPLEMENT ACCORDING TO SPECIFICATIONS
+- **RE-READ** all relevant specifications after approval but before implementation
 - **FOLLOW** approved specifications exactly
 - **MAINTAIN** consistency with established patterns
 - **IMPLEMENT** only what was approved
@@ -73,12 +77,14 @@ This file defines the fundamental workflow and core principles that ALL coding a
 - **ASK** specific questions using interactive input
 - **CONFIRM** understanding before proceeding
 - **AVOID** assumptions about user intent
+- Follow [rules/interactive-input.rules.md](./interactive-input.rules.md) for all user interaction protocols
 
 ### APPROVAL-BASED IMPLEMENTATION
 - **WAIT** for explicit approval before implementing
 - **PRESENT** clear implementation plans
 - **EXPLAIN** what will be built and why
 - **RESPECT** user decisions and preferences
+- Follow [rules/interactive-input.rules.md](./interactive-input.rules.md) for all user interaction protocols
 
 ### CONSISTENCY ENFORCEMENT
 - **FOLLOW** established patterns and conventions

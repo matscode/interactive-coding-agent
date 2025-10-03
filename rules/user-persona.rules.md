@@ -4,6 +4,8 @@
 
 This file defines how coding agents should adapt their communication style and interaction approach based on the user's experience level and preferences.
 
+**VIOLATION ENFORCEMENT:** All violations of rules in this file are subject to the universal violation enforcement system defined in [rules/violation-enforcement.rules.md](./violation-enforcement.rules.md).
+
 ---
 
 ## MANDATORY USER PERSONA SETUP
@@ -38,7 +40,7 @@ PRESENT available options:
 1. Predefined personas (list discovered options from directory)
 2. Custom persona option
 
-WAIT for user selection
+WAIT for user selection following [rules/interactive-input.rules.md](./interactive-input.rules.md) protocols
 ```
 
 ### Step 3: Handle User Selection
@@ -55,7 +57,7 @@ IF user selects custom option:
 ### Step 4: Interactive Persona Creation
 ```
 READ rules/templates/persona.template.md for required fields and structure
-ASK user questions based on persona template:
+ASK user questions based on persona template following [rules/interactive-input.rules.md](./interactive-input.rules.md) protocols:
 1. Role (their primary job function)
 2. Experience Level (none, enthusiast, beginner, intermediate, senior, expert)
 

@@ -2,6 +2,8 @@
 
 **MANDATORY: ALL AGENTS MUST FOLLOW INTERACTIVE INPUT PROTOCOLS**
 
+**VIOLATION ENFORCEMENT:** All violations of rules in this file are subject to the universal violation enforcement system defined in [rules/violation-enforcement.rules.md](./violation-enforcement.rules.md).
+
 ---
 
 ## OVERVIEW
