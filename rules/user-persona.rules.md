@@ -57,7 +57,7 @@ IF user selects custom option:
 ### Step 4: Interactive Persona Creation
 ```
 READ rules/templates/persona.template.md for required fields and structure
-ASK user questions based on persona template following [rules/interactive-input.rules.md](./interactive-input.rules.md) protocols:
+ASK user questions based on persona template following **USE `run_command` TOOL** for all questions - **MUST FOLLOW** [rules/interactive-input.rules.md](./interactive-input.rules.md) for context on using run_command tool:
 1. Role (their primary job function)
 2. Experience Level (none, enthusiast, beginner, intermediate, senior, expert)
 

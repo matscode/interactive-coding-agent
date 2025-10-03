@@ -8,13 +8,13 @@
 
 ## REQUIRED READING
 
-**AGENTS MUST READ THESE RULE FILES:**
+**MANDATORY:** Read ALL rule files in this exact order before any coding session:
 
-1. **[rules/user-persona.rules.md](./user-persona.rules.md)** - User persona detection and adaptive communication
-2. **[rules/core-principles.rules.md](./core-principles.rules.md)** - Core agent behavior and workflow principles
-3. **[rules/spec-management.rules.md](./spec-management.rules.md)** - Project specification and decision documentation requirements
-4. **[rules/interactive-input.rules.md](./interactive-input.rules.md)** - Interactive terminal input and user clarification protocols
-5. **[rules/violation-enforcement.rules.md](./violation-enforcement.rules.md)** - Universal violation enforcement system and compliance protocols  
+1. **[rules/core-principles.rules.md](./core-principles.rules.md)** - Core workflow and principles
+2. **[rules/interactive-input.rules.md](./interactive-input.rules.md)** - Interactive input protocols and run_command usage
+3. **[rules/user-persona.rules.md](./user-persona.rules.md)** - User persona management
+4. **[rules/spec-management.rules.md](./spec-management.rules.md)** - Specification creation and management
+5. **[rules/violation-enforcement.rules.md](./violation-enforcement.rules.md)** - Universal violation enforcement system  
 
 **FAILURE TO READ AND FOLLOW ALL RULES = CRITICAL VIOLATION**
 

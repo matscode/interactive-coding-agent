@@ -67,7 +67,7 @@ When coding agents need context for:
 1. **READ EXISTING SPECIFICATIONS** - Check `project-specs/index.spec.md` first
 2. **FOLLOW EXISTING PATTERNS** - Use established patterns if applicable (see `project-specs/index.spec.md` for documented patterns)
 3. **PAUSE IMPLEMENTATION** - Stop coding when new decisions are needed
-4. **ASK CLARIFYING QUESTIONS** - Follow [rules/interactive-input.rules.md](./interactive-input.rules.md) for all user interaction requirements
+4. **ASK CLARIFYING QUESTIONS** - **USE `run_command` TOOL** for all questions - **MUST FOLLOW** [rules/interactive-input.rules.md](./interactive-input.rules.md) for context on using run_command tool
 5. **RESEARCH OPTIONS** - Present alternatives with trade-offs
 6. **PROPOSE SPECIFICATION** - Create spec file with decision rationale
 7. **WAIT FOR APPROVAL** - Do not implement until user approves

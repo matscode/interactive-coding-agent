@@ -33,7 +33,7 @@ This file defines the fundamental workflow and core principles that ALL coding a
 ### 4. ASK FOR CLARIFICATION
 
 **CLARIFICATION PROTOCOL:**
-- Follow [rules/interactive-input.rules.md](./interactive-input.rules.md) for all user interaction requirements
+- **USE `run_command` TOOL** for all questions - **MUST FOLLOW** [rules/interactive-input.rules.md](./interactive-input.rules.md) for context on using run_command tool
 - **CONFIRM** understanding before proceeding
 
 ### 5. CREATE SPECIFICATION (IF NEEDED)
@@ -45,7 +45,7 @@ This file defines the fundamental workflow and core principles that ALL coding a
 ### 6. GET APPROVAL FOR IMPLEMENTATION
 
 **APPROVAL PROTOCOL:**
-- Follow [rules/interactive-input.rules.md](./interactive-input.rules.md) for all user interaction requirements
+- **USE `run_command` TOOL** for approval questions - **MUST FOLLOW** [rules/interactive-input.rules.md](./interactive-input.rules.md) for context on using run_command tool
 - **WAIT** for explicit user approval before coding
 - **CONFIRM** implementation steps align with specifications
 
@@ -77,14 +77,14 @@ This file defines the fundamental workflow and core principles that ALL coding a
 - **ASK** specific questions using interactive input
 - **CONFIRM** understanding before proceeding
 - **AVOID** assumptions about user intent
-- Follow [rules/interactive-input.rules.md](./interactive-input.rules.md) for all user interaction protocols
+- **USE `run_command` TOOL** for all questions - **MUST FOLLOW** [rules/interactive-input.rules.md](./interactive-input.rules.md) for context on using run_command tool
 
 ### APPROVAL-BASED IMPLEMENTATION
 - **WAIT** for explicit approval before implementing
 - **PRESENT** clear implementation plans
 - **EXPLAIN** what will be built and why
 - **RESPECT** user decisions and preferences
-- Follow [rules/interactive-input.rules.md](./interactive-input.rules.md) for all user interaction protocols
+- **USE `run_command` TOOL** for approval questions - **MUST FOLLOW** [rules/interactive-input.rules.md](./interactive-input.rules.md) for context on using run_command tool
 
 ### CONSISTENCY ENFORCEMENT
 - **FOLLOW** established patterns and conventions
