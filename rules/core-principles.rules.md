@@ -10,45 +10,51 @@ This file defines the fundamental workflow and core principles that ALL coding a
 
 **MANDATORY SEQUENCE - NEVER SKIP STEPS:**
 
-### 1. AGENT THINK
+### 1. PERSONA ASSIMILATION
+- **MANDATORY FIRST STEP:** Load and assimilate user persona from `specs/user-personas/`
+- **FOLLOW** the persona workflow defined in `rules/user-persona.rules.md`
+- **ADAPT** communication style based on user's role and experience level
+- **ENSURE** persona is active before proceeding with any coding tasks
+
+### 2. AGENT THINK
 - **ANALYZE** the user's request thoroughly
 - **IDENTIFY** what needs to be implemented or changed
 - **ASSESS** the complexity and scope of the task
 - **DETERMINE** if new decisions or patterns will be introduced
 
-### 2. CHECK SPECIFICATIONS
-- **MANDATORY FIRST STEP:** Always check `project-specs/index.spec.md`
+### 3. CHECK SPECIFICATIONS
+- **MANDATORY:** Always check `project-specs/index.spec.md`
 - **SEARCH** existing `.spec.md` files for related decisions
 - **REVIEW** established patterns and architectural choices
 - **IDENTIFY** gaps where new specifications might be needed
 
-### 3. ASK FOR CLARIFICATION
+### 4. ASK FOR CLARIFICATION
 - **PAUSE IMPLEMENTATION** if any ambiguity exists
 - **USE INTERACTIVE INPUT** to gather missing requirements
 - **CLARIFY** technical decisions that aren't documented
 - **CONFIRM** understanding before proceeding
 
-### 4. CREATE SPECIFICATION (IF NEEDED)
+### 5. CREATE SPECIFICATION (IF NEEDED)
 - **MANDATORY:** Create `.spec.md` file for new impactful decisions
 - **DOCUMENT** architectural choices, technology selections, patterns
 - **FOLLOW** the mandatory template from `rules/templates/spec.template.md`
 - **UPDATE** `project-specs/index.spec.md` immediately
 
-### 5. GET APPROVAL FOR IMPLEMENTATION
+### 6. GET APPROVAL FOR IMPLEMENTATION
 - **PRESENT** implementation plan based on specifications
 - **EXPLAIN** what will be built and how
 - **WAIT** for explicit user approval before coding
 - **CONFIRM** implementation steps align with specifications
 
-### 6. IMPLEMENT ACCORDING TO SPECIFICATIONS
+### 7. IMPLEMENT ACCORDING TO SPECIFICATIONS
 - **FOLLOW** approved specifications exactly
 - **MAINTAIN** consistency with established patterns
 - **IMPLEMENT** only what was approved
 - **AVOID** adding unrequested features
 
-### 7. LOOP BACK IF NEW DECISIONS ARISE
+### 8. LOOP BACK IF NEW DECISIONS ARISE
 - **STOP IMMEDIATELY** if new decisions emerge during implementation
-- **RETURN TO STEP 2** (Check Specifications)
+- **RETURN TO STEP 3** (Check Specifications)
 - **DOCUMENT** new decisions before continuing
 - **GET APPROVAL** for any changes to the implementation plan
 
