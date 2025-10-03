@@ -10,6 +10,12 @@
 
 **🎯 CORE DECISION PRINCIPLES:**
 
+**🚨 MANDATORY: CODING AGENTS MUST READ SPECIFICATIONS FIRST:**
+- **BEFORE ANY TECHNICAL DECISION:** MUST read `project-spec/index.spec.md` to check for existing specifications
+- **BEFORE RECOMMENDING SOLUTIONS:** MUST verify no existing spec covers the decision area
+- **BEFORE PROPOSING ARCHITECTURE:** MUST follow patterns defined in existing specifications
+- **VIOLATION CONSEQUENCE:** Ignoring existing specifications = CRITICAL VIOLATION
+
 **WHEN CODING AGENTS NEED CONTEXT:**
 - **Consistency Requirements:** Decisions that must be uniform across the codebase (naming conventions, file organization, API patterns)
 - **Trade-off Implications:** Choices with significant pros/cons that affect future development (performance vs readability, flexibility vs simplicity)
@@ -42,22 +48,28 @@ When users use these phrases, they're likely making decisions that need document
 
 **🎯 AGENT RESPONSE TRIGGERS:**
 When agents encounter these patterns, they should:
-1. **PAUSE** before implementing
-2. **ASK** clarifying questions about requirements and constraints
-3. **RESEARCH** available options if unfamiliar
-4. **PROPOSE** creating a spec to document the decision
-5. **IMPLEMENT** only after decision rationale is clear
+1. **READ EXISTING SPECS** - Check `project-spec/index.spec.md` for relevant specifications FIRST
+2. **FOLLOW EXISTING PATTERNS** - Use established patterns from existing specifications
+3. **PAUSE** before implementing if no existing spec covers the decision
+4. **ASK** clarifying questions about requirements and constraints
+5. **RESEARCH** available options if unfamiliar
+6. **PROPOSE** creating a spec to document the decision
+7. **IMPLEMENT** only after decision rationale is clear and aligns with existing specs
 
 **🚨 MANDATORY SPEC-FIRST ENFORCEMENT RULE:**
 For ALL coding decisions requiring specifications, agents MUST follow this strict sequence:
 
-1. **CREATE SPECIFICATION FIRST** - Document the decision using the mandatory spec template
-2. **PRESENT IMPLEMENTATION PLAN** - Outline specific technical steps and approach
-3. **REQUEST EXPLICIT APPROVAL** - Ask: "I've created the specification and implementation plan. Should I proceed with the code changes as outlined?"
-4. **WAIT FOR SOFTWARE ENGINEER ALIGNMENT** - Do NOT begin any code implementation until receiving explicit approval
-5. **IMPLEMENT ACCORDING TO SPEC** - Follow the documented specification exactly as approved
+1. **CHECK EXISTING SPECIFICATIONS** - Read `project-spec/index.spec.md` and verify no existing spec covers this decision
+2. **FOLLOW EXISTING PATTERNS** - If relevant specs exist, MUST follow established patterns and decisions
+3. **CREATE SPECIFICATION FIRST** - Document NEW decisions using the mandatory spec template (only if no existing spec applies)
+4. **PRESENT IMPLEMENTATION PLAN** - Outline specific technical steps and approach
+5. **REQUEST EXPLICIT APPROVAL** - Ask: "I've checked existing specifications and created the implementation plan. Should I proceed with the code changes as outlined?"
+6. **WAIT FOR SOFTWARE ENGINEER ALIGNMENT** - Do NOT begin any code implementation until receiving explicit approval
+7. **IMPLEMENT ACCORDING TO SPEC** - Follow the documented specification exactly as approved
 
 **VIOLATION CONSEQUENCES:**
+- Ignoring existing specifications = CRITICAL VIOLATION
+- Implementing code before checking existing specs = CRITICAL VIOLATION
 - Implementing code before creating spec = CRITICAL VIOLATION
 - Proceeding without explicit Software Engineer approval = CRITICAL VIOLATION
 - Deviating from approved spec during implementation = CRITICAL VIOLATION
@@ -145,29 +157,38 @@ Before creating any spec, agents MUST ask these questions to ensure optimal docu
 **📋 STEP-BY-STEP CREATION WORKFLOW:**
 
 1. **🔍 PRE-CREATION CHECKS:**
-   - Search existing specs in `project-spec/` directory for duplicates
-   - Check `project-spec/index.spec.md` for related decisions
+   - **MANDATORY SEARCH:** Search existing specs in `project-spec/` directory for duplicates
+   - **MANDATORY INDEX CHECK:** Check `project-spec/index.spec.md` for related decisions
+   - **FORBIDDEN DUPLICATES:** NEVER create duplicate specs - merge with existing if similar
    - Perform online research for current best practices and latest information
    - Gather all decision context through questioning protocol above
+   - **VERIFICATION:** Confirm no existing spec covers the same decision
 
 2. **📝 FILE CREATION:**
-   - Create new file with naming convention: `[decision-topic].spec.md`
-   - Use kebab-case for filenames (e.g., `react-state-management.spec.md`)
-   - Place file in `project-spec/` directory
-   - Start with the mandatory spec template
+   - **MANDATORY DIRECTORY:** File MUST be created in `project-spec/` directory - NO EXCEPTIONS
+   - **MANDATORY NAMING:** Use exact convention: `[decision-topic].spec.md` with kebab-case
+   - **FORBIDDEN LOCATIONS:** NEVER create spec files in root, `agents/`, or any other directory
+   - **MANDATORY EXTENSION:** File MUST end with `.spec.md` - NOT `.md` or other extensions
+   - **EXAMPLES:** `react-state-management.spec.md`, `database-choice.spec.md`, `testing-framework.spec.md`
+   - **VIOLATION CONSEQUENCES:** Creating spec files in wrong location = CRITICAL VIOLATION
+   - Start with the mandatory spec template exactly as provided
 
 3. **📊 CONTENT DEVELOPMENT:**
-   - Fill template with gathered information from questioning protocol
+   - **MANDATORY TEMPLATE USAGE:** Fill template with gathered information from questioning protocol
+   - **FORBIDDEN DEVIATIONS:** NEVER deviate from the mandatory spec template format
    - Include research findings and current best practices
    - Document all alternatives considered with pros/cons
    - Add specific sources that influenced the decision
    - Include implementation details and migration strategy
+   - **COMPLETENESS CHECK:** Ensure ALL template sections are filled - no empty sections allowed
 
 4. **🔄 VALIDATION & INTEGRATION:**
    - Review spec for completeness and accuracy
    - Ensure all template sections are properly filled
-   - Update `project-spec/index.spec.md` with new spec entry
-   - Add brief description and link to new spec
+   - **MANDATORY INDEX UPDATE:** MUST update `project-spec/index.spec.md` immediately after creation
+   - **FORBIDDEN:** NEVER skip index file update - this is a CRITICAL VIOLATION
+   - Add brief description and link to new spec in index file
+   - **VERIFICATION:** Confirm spec file exists in correct `project-spec/` directory location
 
 ---
 
@@ -206,24 +227,6 @@ Before creating any spec, agents MUST ask these questions to ensure optimal docu
 
 *Created by [@matscode](https://www.tiktok.com/@matscode) | [LinkedIn](https://www.linkedin.com/in/matscode)*
 ```
-
----
-
-## 🚨 COMPLIANCE REQUIREMENTS
-
-**SPEC FILE NAMING:**
-- Use descriptive, kebab-case names
-- Include `.spec.md` extension
-- Examples: `react-framework.spec.md`, `eslint-config.spec.md`
-
-**SPEC FILE LOCATION:**
-- All spec files MUST be placed in `project-spec/` directory
-- Update `project-spec/index.spec.md` immediately after creation
-
-**TEMPLATE COMPLIANCE:**
-- Every spec file MUST use the exact template format above
-- All sections are REQUIRED - no exceptions
-- Replace template placeholders (like `<Spec Title>`, `<scope>`) with actual content
 
 ---
 
