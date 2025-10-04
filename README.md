@@ -40,26 +40,26 @@ Watch how the Interactive Coding Agent works:
 
 ## Setup
 
-### Option 1: Full Setup (Recommended)
-**Copy and paste everything** from this folder into your project root. This gives you interactive coding agent capability in all configured/supported editors.
+### Quick Start (Recommended)
+**Copy this `interactive-coding-agent` folder's contents** (the AGENTS.md file, rules/ folder, and others) **into your project root.** That's it! You now have interactive coding agents.
 
-### Option 2: Editor-Specific Setup
-If you only want to setup for one editor, copy these files:
+### Minimal Setup
+Want just the essentials? Copy these:
 
-**Always Required:**
-- `AGENTS.md` (root level)
-- `rules/` folder (contains the main rules - **entry point: `rules/index.rules.md`**)
+**Required Files and Folders:**
+- `AGENTS.md` (put in your project root)
+- `rules/` folder (the main rules)
+- `project-specs/` folder
+- `specs/` folder
 
-**Plus your editor's config:**
-- For **Trae AI**: Copy `.trae/` folder
-- For **Cursor**: Copy `.cursor/` folder (if available)
-- For **Windsurf**: Copy `.windsurf/` folder
-- For **Kiro**: Copy `.kiro/` folder
+**Your Editor Config:**
+- **Trae AI**: Copy `.trae/` folder
+- **Cursor**: Copy `.cursor/` folder  
+- **Windsurf**: Copy `.windsurf/` folder
+- **Kiro**: Copy `.kiro/` folder
 
-### How It Works
-Once copied, the rules will automatically apply when you start a new coding sessions in supported editors.
-
-**Important:** After copying the configuration files, you must **start a new chat session** for the rules to take effect.
+### Activation
+After copying files, **start a new chat** in your editor. The rules activate automatically.
 
 ## 👤 User Persona System
 
@@ -121,6 +121,40 @@ The persona system ensures you get exactly the right level of detail and communi
 | **GitHub Copilot** | IDE | `AGENTS.md` | ❌ Not Working Yet |
 | **Gemini** | CLI | `AGENTS.md` | ❌ Not Working Yet |
 | **Gemini Code Assist (VS Code)** | IDE | `AGENTS.md` | ❌ Not Working Yet |
+
+## 🔧 Troubleshooting
+
+### Quick Fix (Try This First!)
+**Problem**: Agent not behaving as expected
+- **Simple Solution**: Ask the AI to "read the project rules" 
+- **Fun Trick**: Just type "You violated" - agents usually take responsibility and self-correct
+- **Reset**: These prompts often trigger proper rule compliance immediately
+
+### Agent Not Following Rules
+**Problem**: Agent ignores interactive protocols or makes assumptions
+- **Solution**: Start a **new chat session** - rules only activate on fresh sessions
+- **Check**: Verify `AGENTS.md` or editor config files are in your project root
+- **Verify**: Look for rule violations in agent responses and point them out directly
+
+### Rules Not Activating  
+**Problem**: Agent behaves normally without interactive questioning
+- **Solution**: Confirm you copied the correct files for your editor (see Setup section)
+- **Check**: Ensure `rules/` folder is present with `index.rules.md` as entry point
+- **Restart**: Close and reopen your editor, then start a new chat session
+
+### Interactive Questions Not Working
+**Problem**: Agent shows questions as text instead of executing them like a command
+- **Solution**: This indicates a rule violation - remind agent to use `run_command` tool
+- **Check**: Agent should execute questions like `echo "question"; read answer`
+- **Escalate**: If persistent, explicitly request: "Use the run_command tool for questions"
+
+### Persona Setup Issues
+**Problem**: Agent doesn't ask about user persona or uses wrong communication style  
+- **Solution**: Delete `specs/user-persona.spec.md` and start a new chat session
+- **Manual**: Create persona file manually using templates in `rules/templates/`
+- **Predefined**: Copy from `specs/user-personas/` (senior-software-engineer.spec.md, product-designer.spec.md, etc.) to `specs/user-persona.spec.md`
+- **Override**: Edit existing persona file directly to update preferences
+- **Final Step**: Start a new chat and ask the agent to "setup my user persona"
 
 ---
 

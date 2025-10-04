@@ -49,8 +49,15 @@ This file defines the fundamental workflow and core principles that ALL coding a
 - **WAIT** for explicit user approval before coding
 - **CONFIRM** implementation steps align with specifications
 
+### 6.5. DOCUMENT USER DECISIONS
+**DECISION DOCUMENTATION PROTOCOL:**
+- **MANDATORY:** After ANY user decision or choice, ask: "Should this decision be documented in the relevant spec file for future reference?"
+- **USE `run_command` TOOL** for documentation questions - **MUST FOLLOW** [rules/interactive-input.rules.md](./interactive-input.rules.md) for context on using run_command tool
+- **INCLUDE** all decisions: colors, preferences, library choices, UI layouts, feature behaviors
+- **ENSURE** specs become complete blueprints for exact reproduction
+
 ### 7. IMPLEMENT ACCORDING TO SPECIFICATIONS
-- **RE-READ** all relevant specifications after approval but before implementation
+- **RE-READ** all relevant specifications immediately before implementation
 - **FOLLOW** approved specifications exactly
 - **MAINTAIN** consistency with established patterns
 - **IMPLEMENT** only what was approved

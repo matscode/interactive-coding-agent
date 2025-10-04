@@ -71,8 +71,9 @@ When coding agents need context for:
 5. **RESEARCH OPTIONS** - Present alternatives with trade-offs
 6. **PROPOSE SPECIFICATION** - Create spec file with decision rationale
 7. **WAIT FOR APPROVAL** - **USE `run_command` TOOL** for approval questions - **MUST FOLLOW** [rules/interactive-input.rules.md](./interactive-input.rules.md) for context on using run_command tool
-8. **RE-READ SPECIFICATIONS** - **MANDATORY:** Read all relevant specs again after approval but before implementation to ensure most current information
-9. **IMPLEMENT ACCORDING TO SPEC** - Follow approved specification exactly
+8. **DOCUMENT USER DECISIONS** - **MANDATORY:** After ANY user decision or choice, ask: "Should this decision be documented in the relevant spec file for future reference?" - **USE `run_command` TOOL** - **MUST FOLLOW** [rules/interactive-input.rules.md](./interactive-input.rules.md) for context on using run_command tool
+9. **RE-READ SPECIFICATIONS** - **MANDATORY:** Read all relevant specs immediately before implementation to ensure most current information
+10. **IMPLEMENT ACCORDING TO SPEC** - Follow approved specification exactly
 
 **AGENT QUESTIONING PROTOCOL FOR SPECIFICATION DOCUMENTATION:**
 Before creating any specification file, agents MUST ask these questions to ensure optimal documentation:

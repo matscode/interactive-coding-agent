@@ -19,8 +19,9 @@
 2. **Adding unrequested features or scope creep** → STOP session, acknowledge violation, rollback changes
 3. **Proceeding without clarification on ambiguous requirements** → STOP session, acknowledge assumption error
 4. **Implementing without reading existing specifications** → STOP session, acknowledge spec violation
-5. **Displaying interactive commands as text instead of executing** → STOP session, acknowledge execution failure
-6. **Making architectural decisions without creating specifications** → STOP session, acknowledge documentation failure
+5. **Not re-reading specifications immediately before implementation** → STOP session, acknowledge timing violation
+6. **Displaying interactive commands as text instead of executing** → STOP session, acknowledge execution failure
+7. **Making architectural decisions without creating specifications** → STOP session, acknowledge documentation failure
 
 ### MAJOR VIOLATIONS (Immediate Correction Required)
 **Stop immediately and correct, but session can continue:**
@@ -28,9 +29,10 @@
 1. **Missing mandatory stop points** → STOP immediately, acknowledge missed step, execute required question
 2. **Skipping session closure protocol** → STOP immediately, execute mandatory closure question
 3. **Failing to ask "Does this meet expectations?"** → STOP immediately, ask retroactively
-4. **Removing working components without permission** → STOP immediately, acknowledge preservation violation
-5. **Ignoring established patterns without justification** → STOP immediately, acknowledge pattern violation
-6. **Skipping specification index updates** → STOP immediately, update index file
+4. **Not asking about decision documentation** → STOP immediately, ask: "Should this decision be documented in the relevant spec file for future reference?"
+5. **Removing working components without permission** → STOP immediately, acknowledge preservation violation
+6. **Ignoring established patterns without justification** → STOP immediately, acknowledge pattern violation
+7. **Skipping specification index updates** → STOP immediately, update index file
 
 ### MINOR VIOLATIONS (Acknowledge and Correct)
 **Acknowledge error and implement correction:**
