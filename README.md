@@ -115,7 +115,7 @@ The persona system ensures you get exactly the right level of detail and communi
 | **Trae AI** | IDE | `.trae > rules > project_rules.md` | ✅ Tested |
 | **Cursor** | IDE | `AGENTS.md` | ✅ Tested |
 | **Windsurf** | IDE | `.windsurf > rules > project_rules.md` | ✅ Tested |
-| **Kiro** | IDE | `.kiro > steering > rules.md` | ✅ Tested |
+| **Kiro (Vibe Mode)** | IDE | `.kiro > steering > rules.md` | ✅ Tested |
 | **Codex** | IDE | `AGENTS.md` | ⏳ Not Tested Yet |
 | **Claude Code** | IDE | `AGENTS.md` | ⏳ Not Tested Yet |
 | **GitHub Copilot** | IDE | `AGENTS.md` | ❌ Not Working Yet |

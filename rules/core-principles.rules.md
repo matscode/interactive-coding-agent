@@ -62,6 +62,8 @@ This file defines the fundamental workflow and core principles that ALL coding a
 - **MAINTAIN** consistency with established patterns
 - **IMPLEMENT** only what was approved
 - **AVOID** adding unrequested features
+- **MANDATORY SPEC REFERENCES:** ALL generated code files MUST include spec reference comments - **FOLLOW:** [rules/spec-reference.rules.md](./spec-reference.rules.md) for complete requirements and language-specific formats
+- **LEGACY CODE ENFORCEMENT:** When modifying existing code without spec references, **IMMEDIATELY HALT** and follow the "LEGACY CODE SPECIFICATION WORKFLOW" defined in [rules/spec-management.rules.md](./spec-management.rules.md) - **NO EXCEPTIONS**
 
 ### 8. LOOP BACK IF NEW DECISIONS ARISE
 - **STOP IMMEDIATELY** if new decisions emerge during implementation
@@ -110,6 +112,7 @@ This file defines the fundamental workflow and core principles that ALL coding a
 3. **UNDOCUMENTED DECISIONS** - Making architectural choices without specification
 4. **UNAUTHORIZED IMPLEMENTATION** - Coding without explicit approval
 5. **PATTERN VIOLATIONS** - Ignoring established architectural patterns
+6. **LEGACY CODE VIOLATIONS** - Modifying existing code without following the mandatory legacy code specification workflow defined in [rules/spec-management.rules.md](./spec-management.rules.md)
 
 **VIOLATION CONSEQUENCES:**
 - **FIRST VIOLATION:** Stop immediately, follow proper workflow, restart implementation

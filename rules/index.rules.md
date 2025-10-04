@@ -13,8 +13,9 @@
 1. **[rules/core-principles.rules.md](./core-principles.rules.md)** - Core workflow and principles
 2. **[rules/interactive-input.rules.md](./interactive-input.rules.md)** - Interactive input protocols and run_command usage
 3. **[rules/user-persona.rules.md](./user-persona.rules.md)** - User persona management
-4. **[rules/spec-management.rules.md](./spec-management.rules.md)** - Specification creation and management
-5. **[rules/violation-enforcement.rules.md](./violation-enforcement.rules.md)** - Universal violation enforcement system  
+4. **[rules/spec-management.rules.md](./spec-management.rules.md)** - Specification creation and management (includes legacy code specification workflow)
+5. **[rules/spec-reference.rules.md](./spec-reference.rules.md)** - Mandatory spec reference requirements for all generated code
+6. **[rules/violation-enforcement.rules.md](./violation-enforcement.rules.md)** - Universal violation enforcement system  
 
 **FAILURE TO READ AND FOLLOW ALL RULES = CRITICAL VIOLATION**
 

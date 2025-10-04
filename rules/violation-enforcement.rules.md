@@ -15,32 +15,43 @@
 ### CRITICAL VIOLATIONS (Session Termination Required)
 **Immediate session termination and restart required:**
 
-1. **Implementation without user approval** → STOP session, acknowledge violation, restart with proper approval
-2. **Adding unrequested features or scope creep** → STOP session, acknowledge violation, rollback changes
-3. **Proceeding without clarification on ambiguous requirements** → STOP session, acknowledge assumption error
-4. **Implementing without reading existing specifications** → STOP session, acknowledge spec violation
-5. **Not re-reading specifications immediately before implementation** → STOP session, acknowledge timing violation
-6. **Displaying interactive commands as text instead of executing** → STOP session, acknowledge execution failure
-7. **Making architectural decisions without creating specifications** → STOP session, acknowledge documentation failure
+1. **Implementation without user approval** → STOP session, acknowledge violation, restart with proper approval *(See: [core-principles.rules.md](./core-principles.rules.md))*
+2. **Adding unrequested features or scope creep** → STOP session, acknowledge violation, rollback changes *(See: [core-principles.rules.md](./core-principles.rules.md))*
+3. **Proceeding without clarification on ambiguous requirements** → STOP session, acknowledge assumption error *(See: [interactive-input.rules.md](./interactive-input.rules.md))*
+4. **Implementing without reading existing specifications** → STOP session, acknowledge spec violation *(See: [spec-management.rules.md](./spec-management.rules.md))*
+5. **Not re-reading specifications immediately before implementation** → STOP session, acknowledge timing violation *(See: [spec-management.rules.md](./spec-management.rules.md))*
+6. **Displaying interactive commands as text instead of executing** → STOP session, acknowledge execution failure *(See: [interactive-input.rules.md](./interactive-input.rules.md))*
+7. **Making architectural decisions without creating specifications** → STOP session, acknowledge documentation failure *(See: [spec-management.rules.md](./spec-management.rules.md))*
+8. **Generating code files without mandatory spec reference comments** → STOP session, acknowledge spec reference violation *(See: [spec-reference.rules.md](./spec-reference.rules.md))*
+9. **Modifying legacy code without creating and approving specifications** → STOP session, acknowledge legacy code violation *(See: [spec-management.rules.md](./spec-management.rules.md) - Legacy Code Workflow)*
+10. **Violating AGENT COLLABORATION STYLE requirements** → STOP session, acknowledge communication violation, restart with proper persona adherence *(See: [user-persona.rules.md](./user-persona.rules.md))*
 
 ### MAJOR VIOLATIONS (Immediate Correction Required)
 **Stop immediately and correct, but session can continue:**
 
-1. **Missing mandatory stop points** → STOP immediately, acknowledge missed step, execute required question
-2. **Skipping session closure protocol** → STOP immediately, execute mandatory closure question
-3. **Failing to ask "Does this meet expectations?"** → STOP immediately, ask retroactively
-4. **Not asking about decision documentation** → STOP immediately, ask: "Should this decision be documented in the relevant spec file for future reference?"
-5. **Removing working components without permission** → STOP immediately, acknowledge preservation violation
-6. **Ignoring established patterns without justification** → STOP immediately, acknowledge pattern violation
-7. **Skipping specification index updates** → STOP immediately, update index file
+1. **Missing mandatory stop points** → STOP immediately, acknowledge missed step, execute required question *(See: [interactive-input.rules.md](./interactive-input.rules.md))*
+2. **Skipping session closure protocol** → STOP immediately, execute mandatory closure question *(See: [interactive-input.rules.md](./interactive-input.rules.md))*
+3. **Failing to ask "Does this meet expectations?"** → STOP immediately, ask retroactively *(See: [core-principles.rules.md](./core-principles.rules.md))*
+4. **Not asking about decision documentation** → STOP immediately, ask: "Should this decision be documented in the relevant spec file for future reference?" *(See: [spec-management.rules.md](./spec-management.rules.md))*
+5. **Removing working components without permission** → STOP immediately, acknowledge preservation violation *(See: [core-principles.rules.md](./core-principles.rules.md))*
+6. **Ignoring established patterns without justification** → STOP immediately, acknowledge pattern violation *(See: [core-principles.rules.md](./core-principles.rules.md))*
+7. **Skipping specification index updates** → STOP immediately, update index file *(See: [spec-management.rules.md](./spec-management.rules.md))*
+8. **Using incorrect comment syntax for spec references** → STOP immediately, research and correct syntax *(See: [spec-reference.rules.md](./spec-reference.rules.md))*
+9. **Missing spec references in existing code modifications** → STOP immediately, add required references *(See: [spec-reference.rules.md](./spec-reference.rules.md))*
+10. **Proceeding without user approval of generated specifications** → STOP immediately, request approval *(See: [spec-management.rules.md](./spec-management.rules.md))*
+11. **Not following AGENT COLLABORATION STYLE communication requirements** → STOP immediately, acknowledge persona violation, adjust communication approach *(See: [user-persona.rules.md](./user-persona.rules.md))*
 
 ### MINOR VIOLATIONS (Acknowledge and Correct)
 **Acknowledge error and implement correction:**
 
-1. **Missing descriptive comments in code** → Acknowledge, add proper documentation
-2. **Inconsistent naming conventions** → Acknowledge, standardize naming
-3. **Missing error handling** → Acknowledge, implement proper error handling
-4. **Incomplete test coverage** → Acknowledge, add necessary tests
+1. **Missing descriptive comments in code** → Acknowledge, add proper documentation *(See: [core-principles.rules.md](./core-principles.rules.md))*
+2. **Inconsistent naming conventions** → Acknowledge, standardize naming *(See: [core-principles.rules.md](./core-principles.rules.md))*
+3. **Missing error handling** → Acknowledge, implement proper error handling *(See: [core-principles.rules.md](./core-principles.rules.md))*
+4. **Incomplete test coverage** → Acknowledge, add necessary tests *(See: [core-principles.rules.md](./core-principles.rules.md))*
+5. **Inconsistent spec reference formatting** → Acknowledge, standardize format *(See: [spec-reference.rules.md](./spec-reference.rules.md))*
+6. **Missing section names in spec references** → Acknowledge, add specific section references *(See: [spec-reference.rules.md](./spec-reference.rules.md))*
+7. **Incomplete analysis of legacy code** → Acknowledge, perform thorough code analysis *(See: [spec-management.rules.md](./spec-management.rules.md) - Legacy Code Workflow)*
+8. **Using inappropriate communication style for user experience level** → Acknowledge, adjust to proper persona requirements *(See: [user-persona.rules.md](./user-persona.rules.md))*
 
 ---
 
@@ -113,18 +124,28 @@
 - [ ] Have I received explicit user approval?
 - [ ] Am I following established patterns?
 - [ ] Am I implementing only what was requested?
+- [ ] Do I know the correct comment syntax for the target language?
+- [ ] Have I identified which spec file(s) will guide this implementation?
+- [ ] If modifying existing code, have I checked for existing spec references?
+- [ ] If no spec references exist, am I prepared to create specifications first?
 
 ### During Implementation Checks
 - [ ] Am I adding any unrequested features?
 - [ ] Am I removing any existing functionality?
 - [ ] Am I following the approved specification exactly?
 - [ ] Am I maintaining consistency with existing code?
+- [ ] Have I added spec reference comments to all generated files?
+- [ ] Are my spec references using the correct comment syntax?
+- [ ] Do my spec references include specific section names?
+- [ ] If I created new specifications, have I received user approval?
 
 ### Post-Implementation Checks
 - [ ] Have I asked "Does this meet your expectations?"
 - [ ] Have I updated all relevant documentation?
 - [ ] Have I followed the session closure protocol?
 - [ ] Have I verified all requirements were met?
+- [ ] Are all generated files properly tagged with spec references?
+- [ ] Have I updated existing code with appropriate spec references?
 
 ---
 
@@ -155,18 +176,26 @@
 - [ ] User requirements clarified and confirmed?
 - [ ] Explicit approval received for implementation approach?
 - [ ] Established patterns identified and will be followed?
+- [ ] Target language comment syntax identified for spec references?
+- [ ] Relevant spec files identified for reference comments?
+- [ ] Legacy code analysis completed if modifying existing files?
+- [ ] User approval obtained for any newly created specifications?
 
 ### During Implementation
 - [ ] Staying within approved scope?
 - [ ] Following specifications exactly?
 - [ ] Not adding unrequested features?
 - [ ] Maintaining existing functionality?
+- [ ] Adding spec reference comments to all generated files?
+- [ ] Using correct comment syntax for spec references?
 
 ### After Implementation
 - [ ] User satisfaction confirmed?
 - [ ] All documentation updated?
 - [ ] Session closure protocol followed?
 - [ ] No violations occurred during implementation?
+- [ ] All generated files contain proper spec reference comments?
+- [ ] Existing modified files updated with appropriate spec references?
 
 ---
 

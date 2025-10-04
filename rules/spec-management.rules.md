@@ -72,8 +72,9 @@ When coding agents need context for:
 6. **PROPOSE SPECIFICATION** - Create spec file with decision rationale
 7. **WAIT FOR APPROVAL** - **USE `run_command` TOOL** for approval questions - **MUST FOLLOW** [rules/interactive-input.rules.md](./interactive-input.rules.md) for context on using run_command tool
 8. **DOCUMENT USER DECISIONS** - **MANDATORY:** After ANY user decision or choice, ask: "Should this decision be documented in the relevant spec file for future reference?" - **USE `run_command` TOOL** - **MUST FOLLOW** [rules/interactive-input.rules.md](./interactive-input.rules.md) for context on using run_command tool
-9. **RE-READ SPECIFICATIONS** - **MANDATORY:** Read all relevant specs immediately before implementation to ensure most current information
-10. **IMPLEMENT ACCORDING TO SPEC** - Follow approved specification exactly
+9. **ADD SPEC REFERENCES TO CODE** - **MANDATORY:** When implementing features based on specifications, ALL generated code files MUST include spec reference comments - **FOLLOW:** [rules/spec-reference.rules.md](./spec-reference.rules.md) for complete requirements and formats
+10. **RE-READ SPECIFICATIONS** - **MANDATORY:** Read all relevant specs immediately before implementation to ensure most current information
+11. **IMPLEMENT ACCORDING TO SPEC** - Follow approved specification exactly
 
 **AGENT QUESTIONING PROTOCOL FOR SPECIFICATION DOCUMENTATION:**
 Before creating any specification file, agents MUST ask these questions to ensure optimal documentation:
@@ -196,6 +197,58 @@ Before creating any specification file, agents MUST ask these questions to ensur
 - Configuration management (Environment variables, config files, feature flags)
 - Documentation standards (Code comments, API documentation, architectural diagrams)
 - Logging conventions (Log levels, structured vs unstructured, centralized collection)
+
+---
+
+## LEGACY CODE SPECIFICATION WORKFLOW
+
+**TRIGGER CONDITION:** When modifying existing code files that lack specification references or when encountering undocumented legacy code
+
+**MANDATORY WORKFLOW FOR LEGACY CODE:**
+
+### 1. IMMEDIATE STOP AND ANALYZE
+- **HALT** all modification activities immediately upon detecting code without spec references
+- **ANALYZE** the existing code logic, patterns, and functionality comprehensively
+- **IDENTIFY** the purpose, requirements, and design decisions embedded in the code
+- **DOCUMENT** current behavior, dependencies, and implementation approach
+- **MAP** relationships between different code components and modules
+
+### 2. CREATE SPECIFICATION FROM CODE ANALYSIS
+- **GENERATE** a comprehensive specification file based on thorough code analysis
+- **INCLUDE** all identified requirements, patterns, design decisions, and architectural choices
+- **STRUCTURE** the spec according to the mandatory template from `rules/templates/spec.template.md`
+- **PLACE** the new spec file in the appropriate `project-specs/` directory
+- **NAME** the spec file descriptively using kebab-case (e.g., `legacy-authentication.spec.md`, `existing-user-management.spec.md`)
+- **DOCUMENT** rationale for reverse-engineered decisions based on code analysis
+- **INCLUDE** any discovered technical debt, limitations, or improvement opportunities
+
+### 3. ADD SPEC REFERENCE TO EXISTING CODE
+- **INSERT** proper spec reference comment at the top of the existing file
+- **USE** the standard format defined in [rules/spec-reference.rules.md](./spec-reference.rules.md)
+- **ENSURE** correct comment syntax for the file's programming language
+- **MAINTAIN** consistency with existing spec reference patterns in the codebase
+
+### 4. MANDATORY USER APPROVAL
+- **PRESENT** the newly created specification to the user for review
+- **EXPLAIN** the analysis process and identified requirements clearly
+- **HIGHLIGHT** any assumptions made during the reverse-engineering process
+- **REQUEST** explicit approval using `run_command` tool - **FOLLOW** [rules/interactive-input.rules.md](./interactive-input.rules.md)
+- **ASK:** "I've created a specification based on the existing code analysis. Please review and approve before I proceed with modifications."
+- **WAIT** for user confirmation before continuing with any modifications
+- **ADDRESS** any user feedback or corrections to the specification
+
+### 5. PROCEED WITH APPROVED MODIFICATIONS
+- **ONLY** after explicit user approval, proceed with the requested modifications
+- **FOLLOW** the newly created and approved specification exactly
+- **MAINTAIN** consistency with the documented requirements and patterns
+- **UPDATE** the specification if modifications require new requirements or reveal additional insights
+- **ENSURE** all new code includes proper spec references as defined in [rules/spec-reference.rules.md](./spec-reference.rules.md)
+
+**VIOLATION CONSEQUENCES FOR LEGACY CODE WORKFLOW:**
+- **CRITICAL VIOLATION:** Modifying legacy code without creating and getting approval for specifications
+- **MAJOR VIOLATION:** Proceeding without user approval of generated specifications
+- **MINOR VIOLATION:** Incomplete analysis or specification creation
+- **ENFORCEMENT:** All violations are subject to the universal violation enforcement system defined in [rules/violation-enforcement.rules.md](./violation-enforcement.rules.md)
 
 ---
 
