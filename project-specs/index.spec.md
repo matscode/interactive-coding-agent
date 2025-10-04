@@ -9,6 +9,7 @@
 **ALL CODING AGENTS MUST:**
 1. **READ** this index file before making any technical recommendations
 2. **FOLLOW** all active specifications referenced here
+3. **EXECUTE SPECIFICATION SELECTION PROTOCOL** - Before creating new specs, scan existing spec names, select candidates, and determine reuse strategy (see [spec-management.rules.md](../rules/spec-management.rules.md))
 4. **UPDATE** this index when new spec files are created
 
 ---

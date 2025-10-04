@@ -64,17 +64,44 @@ When coding agents need context for:
 
 **WHEN ENCOUNTERING DECISION POINTS THAT REQUIRE SPECIFICATION:**
 
+## SPECIFICATION SELECTION AND REUSE PROTOCOL
+
+**MANDATORY: BEFORE CREATING NEW SPECIFICATIONS, AGENTS MUST:**
+
+1. **SCAN EXISTING SPECIFICATION NAMES** - Review all spec filenames in `project-specs/` directory to identify potential matches
+2. **SELECT CANDIDATE SPECIFICATIONS** - Choose 2-3 specs whose names most closely match the current requirement
+3. **READ CANDIDATE SPECIFICATIONS** - Examine selected specs for relevant content and applicability
+4. **DETERMINE SPECIFICATION STRATEGY:**
+   - **REUSE EXISTING:** If a spec fully covers the requirement, use it and update if needed
+   - **EXTEND EXISTING:** If a spec partially covers the requirement, update it with additional sections
+   - **CREATE SUPPORTING SPEC:** If existing spec is too specific, create a complementary spec with clear separation of concerns
+   - **CREATE NEW SPEC:** Only if no existing spec is relevant or applicable
+
+**SPECIFICATION NAMING REQUIREMENTS:**
+- **DETAILED AND SPECIFIC:** Spec names MUST be descriptive enough to identify content from filename alone
+- **SCOPE INDICATION:** Include scope indicators (e.g., `user-authentication.spec.md`, `api-error-handling.spec.md`)
+- **AVOID GENERIC NAMES:** Never use vague names like `general.spec.md` or `misc.spec.md`
+
+**CONFLICT RESOLUTION PROTOCOL:**
+When uncertain between 2+ existing specifications:
+- **ASK USER FOR GUIDANCE** - **USE `run_command` TOOL** - Present options and ask user to select preferred spec or approve new spec creation
+- **PROVIDE CONTEXT** - Explain why each candidate spec might be relevant
+- **WAIT FOR APPROVAL** - Do not proceed until user provides clear direction
+
+**STANDARD WORKFLOW:**
+
 1. **READ EXISTING SPECIFICATIONS** - Check `project-specs/index.spec.md` first
 2. **FOLLOW EXISTING PATTERNS** - Use established patterns if applicable (see `project-specs/index.spec.md` for documented patterns)
-3. **PAUSE IMPLEMENTATION** - Stop coding when new decisions are needed
-4. **ASK CLARIFYING QUESTIONS** - **USE `run_command` TOOL** for all questions - **MUST FOLLOW** [rules/interactive-input.rules.md](./interactive-input.rules.md) for context on using run_command tool
-5. **RESEARCH OPTIONS** - Present alternatives with trade-offs
-6. **PROPOSE SPECIFICATION** - Create spec file with decision rationale
-7. **WAIT FOR APPROVAL** - **USE `run_command` TOOL** for approval questions - **MUST FOLLOW** [rules/interactive-input.rules.md](./interactive-input.rules.md) for context on using run_command tool
-8. **DOCUMENT USER DECISIONS** - **MANDATORY:** After ANY user decision or choice, ask: "Should this decision be documented in the relevant spec file for future reference?" - **USE `run_command` TOOL** - **MUST FOLLOW** [rules/interactive-input.rules.md](./interactive-input.rules.md) for context on using run_command tool
-9. **ADD SPEC REFERENCES TO CODE** - **MANDATORY:** When implementing features based on specifications, ALL generated code files MUST include spec reference comments - **FOLLOW:** [rules/spec-reference.rules.md](./spec-reference.rules.md) for complete requirements and formats
-10. **RE-READ SPECIFICATIONS** - **MANDATORY:** Read all relevant specs immediately before implementation to ensure most current information
-11. **IMPLEMENT ACCORDING TO SPEC** - Follow approved specification exactly
+3. **EXECUTE SPECIFICATION SELECTION PROTOCOL** - Follow the mandatory selection and reuse process above
+4. **PAUSE IMPLEMENTATION** - Stop coding when new decisions are needed
+5. **ASK CLARIFYING QUESTIONS** - **USE `run_command` TOOL** for all questions - **MUST FOLLOW** [rules/interactive-input.rules.md](./interactive-input.rules.md) for context on using run_command tool
+6. **RESEARCH OPTIONS** - Present alternatives with trade-offs
+7. **PROPOSE SPECIFICATION** - Create spec file with decision rationale
+8. **WAIT FOR APPROVAL** - **USE `run_command` TOOL** for approval questions - **MUST FOLLOW** [rules/interactive-input.rules.md](./interactive-input.rules.md) for context on using run_command tool
+9. **DOCUMENT USER DECISIONS** - **MANDATORY:** After ANY user decision or choice, ask: "Should this decision be documented in the relevant spec file for future reference?" - **USE `run_command` TOOL** - **MUST FOLLOW** [rules/interactive-input.rules.md](./interactive-input.rules.md) for context on using run_command tool
+10. **ADD SPEC REFERENCES TO CODE** - **MANDATORY:** When implementing features based on specifications, ALL generated code files MUST include spec reference comments - **FOLLOW:** [rules/spec-reference.rules.md](./spec-reference.rules.md) for complete requirements and formats
+11. **RE-READ SPECIFICATIONS** - **MANDATORY:** Read all relevant specs immediately before implementation to ensure most current information
+12. **IMPLEMENT ACCORDING TO SPEC** - Follow approved specification exactly
 
 **AGENT QUESTIONING PROTOCOL FOR SPECIFICATION DOCUMENTATION:**
 Before creating any specification file, agents MUST ask these questions to ensure optimal documentation:
@@ -113,32 +140,34 @@ Before creating any specification file, agents MUST ask these questions to ensur
 ## MANDATORY SPEC-FIRST ENFORCEMENT RULE
 
 **CRITICAL VIOLATIONS:**
-- Implementing code without checking existing specifications = CRITICAL VIOLATION
-- Making architectural decisions without creating specification = CRITICAL VIOLATION
-- Proceeding with implementation before user approval = CRITICAL VIOLATION
+- Implementing ANY code change without checking existing specifications = CRITICAL VIOLATION
+- Making ANY code modification without creating specification = CRITICAL VIOLATION
+- Proceeding with ANY implementation before user approval = CRITICAL VIOLATION
+- Modifying, adding, or deleting ANY code without specification documentation = CRITICAL VIOLATION
 
-**DECISION IMPACT CATEGORIES:**
+**MANDATORY SPECIFICATION REQUIREMENT:**
 
-**HIGH IMPACT DECISIONS** (ALWAYS require specification):
-- Core architecture changes
-- New external dependencies
-- Database schema changes
-- Authentication/authorization systems
-- State management patterns
-- API design patterns
+**ALL CODE CHANGES** (ALWAYS require specification - NO EXCEPTIONS):
+- **New Features:** Any new functionality, components, functions, endpoints, or capabilities
+- **Bug Fixes:** Any correction of existing code behavior or functionality
+- **Refactoring:** Any restructuring, optimization, or code improvement without changing external behavior
+- **Configuration Changes:** Any modification to build tools, environment settings, or project configuration
+- **Dependency Changes:** Adding, removing, or updating any external libraries or packages
+- **Documentation Updates:** Changes to code comments, README files, or technical documentation
+- **Testing Changes:** Adding, modifying, or removing tests at any level
+- **Performance Optimizations:** Any changes aimed at improving system performance
+- **Security Updates:** Any changes related to security, authentication, or authorization
+- **Maintenance Tasks:** Code cleanup, formatting changes, or routine maintenance
+- **Architecture Changes:** Any modification to system structure, patterns, or design
+- **Database Changes:** Schema modifications, query updates, or data migration scripts
+- **API Changes:** Endpoint modifications, request/response format changes, or protocol updates
+- **UI/UX Changes:** Any modification to user interface or user experience elements
+- **Infrastructure Changes:** Deployment, CI/CD, or environment configuration modifications
 
-**MEDIUM IMPACT DECISIONS** (Usually require specification):
-- Component structure patterns
-- Styling approaches
-- Testing strategies
-- Build/deployment configurations
-- Error handling patterns
-
-**LOW IMPACT DECISIONS** (May require specification if establishing patterns):
-- Individual component implementations
-- Utility function designs
-- Minor styling choices
-- Variable naming conventions
+**CRITICAL ENFORCEMENT:**
+- **NO EXCEPTIONS:** Every single code modification requires a specification document
+- **BEFORE IMPLEMENTATION:** Specifications must be created and approved before any coding begins
+- **COMPLETE COVERAGE:** No code change is too small to require specification documentation
 
 **ARCHITECTURAL PATTERNS:**
 - Component architecture (atomic design, feature-based, etc.)
