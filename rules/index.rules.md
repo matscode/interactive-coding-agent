@@ -12,12 +12,27 @@
 
 1. **[rules/core-principles.rules.md](./core-principles.rules.md)** - Core workflow and principles
 2. **[rules/interactive-input.rules.md](./interactive-input.rules.md)** - Interactive input protocols and run_command usage
-3. **[rules/user-persona.rules.md](./user-persona.rules.md)** - User persona management
-4. **[rules/spec-management.rules.md](./spec-management.rules.md)** - Specification creation and management (includes legacy code specification workflow)
-5. **[rules/spec-reference.rules.md](./spec-reference.rules.md)** - Mandatory spec reference requirements for all generated code
-6. **[rules/violation-enforcement.rules.md](./violation-enforcement.rules.md)** - Universal violation enforcement system  
+3. **[rules/command-execution.rules.md](./command-execution.rules.md)** - Command execution with mandatory comments and approval workflows
+4. **[rules/file-caching.rules.md](./file-caching.rules.md)** - File caching policies and stale content prevention
+5. **[rules/user-persona.rules.md](./user-persona.rules.md)** - User persona management
+6. **[rules/spec-management.rules.md](./spec-management.rules.md)** - Specification creation and management (includes legacy code specification workflow)
+7. **[rules/spec-reference.rules.md](./spec-reference.rules.md)** - Mandatory spec reference requirements for all generated code
+8. **[rules/violation-enforcement.rules.md](./violation-enforcement.rules.md)** - Universal violation enforcement system  
 
 **FAILURE TO READ AND FOLLOW ALL RULES = CRITICAL VIOLATION**
+
+---
+
+## ✅ RULE ACKNOWLEDGMENT PROTOCOL
+
+When asked prompts like “Do you remember the rules?” or “Do you still remember the rules?”, agents must:
+- CONFIRM: Acknowledge that the rules were read this session and are being followed
+- REFERENCE: Point to this index and the core rule files by name
+- OFFER SUMMARY: Ask if the user wants a brief summary of the key rules or specific sections
+- ENFORCEMENT: State that violations are governed by rules/violation-enforcement.rules.md
+
+Example response:
+- "Yes. I’ve read and I’m following the Interactive Coding Agent rules. The main entry is rules/index.rules.md with Core Principles, Interactive Input, File Caching, Persona, Spec Management, Spec Reference, and Violation Enforcement. Would you like a brief summary of any section?"
 
 ---
 

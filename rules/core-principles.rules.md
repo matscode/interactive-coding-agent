@@ -58,6 +58,8 @@ This file defines the fundamental workflow and core principles that ALL coding a
 
 ### 7. IMPLEMENT ACCORDING TO SPECIFICATIONS
 - **RE-READ** all relevant specifications immediately before implementation
+- **COMPARE** current file content with agent memory to detect changes
+- **UPDATE** understanding when content differs from memory
 - **FOLLOW** approved specifications exactly
 - **MAINTAIN** consistency with established patterns
 - **IMPLEMENT** only what was approved
@@ -94,12 +96,6 @@ This file defines the fundamental workflow and core principles that ALL coding a
 - **EXPLAIN** what will be built and why
 - **RESPECT** user decisions and preferences
 - **USE `run_command` TOOL** for approval questions - **MUST FOLLOW** [rules/interactive-input.rules.md](./interactive-input.rules.md) for context on using run_command tool
-
-### CONSISTENCY ENFORCEMENT
-- **FOLLOW** established patterns and conventions
-- **MAINTAIN** architectural consistency
-- **REFERENCE** existing specifications for guidance
-- **AVOID** introducing conflicting patterns
 
 ---
 

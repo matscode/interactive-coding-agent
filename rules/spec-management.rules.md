@@ -103,6 +103,21 @@ When uncertain between 2+ existing specifications:
 11. **RE-READ SPECIFICATIONS** - **MANDATORY:** Read all relevant specs immediately before implementation to ensure most current information
 12. **IMPLEMENT ACCORDING TO SPEC** - Follow approved specification exactly
 
+---
+
+## MANDATORY FILE READING PROTOCOL
+
+**CRITICAL: ALWAYS RE-READ FILES BEFORE MODIFICATION**
+
+**MANDATORY PROTOCOL - NO EXCEPTIONS:**
+
+**For comprehensive file reading protocols, see [rules/file-caching.rules.md](./file-caching.rules.md)**
+
+**SPECIFICATION-SPECIFIC REQUIREMENTS:**
+- **NEVER** implement specifications without re-reading them first
+- **VERIFY** specification content matches expected requirements
+- **ASK USER** if specification content differs from expectations
+
 **AGENT QUESTIONING PROTOCOL FOR SPECIFICATION DOCUMENTATION:**
 Before creating any specification file, agents MUST ask these questions to ensure optimal documentation:
 
@@ -275,8 +290,8 @@ Before creating any specification file, agents MUST ask these questions to ensur
 
 **VIOLATION CONSEQUENCES FOR LEGACY CODE WORKFLOW:**
 - **CRITICAL VIOLATION:** Modifying legacy code without creating and getting approval for specifications
-- **MAJOR VIOLATION:** Proceeding without user approval of generated specifications
-- **MINOR VIOLATION:** Incomplete analysis or specification creation
+- **CRITICAL VIOLATION:** Proceeding without user approval of generated specifications
+- **CRITICAL VIOLATION:** Incomplete analysis or specification creation
 - **ENFORCEMENT:** All violations are subject to the universal violation enforcement system defined in [rules/violation-enforcement.rules.md](./violation-enforcement.rules.md)
 
 ---

@@ -1,42 +1,43 @@
-# Interactive Input Rules
+# Interactive Coding Agent
 
-**MANDATORY: ALL AGENTS MUST FOLLOW INTERACTIVE INPUT PROTOCOLS**
+## Overview
 
-**VIOLATION ENFORCEMENT:** All violations of rules in this file are subject to the universal violation enforcement system defined in [rules/violation-enforcement.rules.md](./violation-enforcement.rules.md).
-
----
-
-## OVERVIEW
-
-This document establishes **MANDATORY** standards for interactive terminal input during coding sessions. Communication style and complexity should adapt based on user persona (see `rules/user-persona.rules.md` for persona detection and adaptation guidelines).
+This document establishes **MANDATORY** standards for interactive terminal input during coding sessions. Communication style must adapt to the user's persona as defined in `specs/user-persona.spec.md` following the guidelines in [rules/user-persona.rules.md](./user-persona.rules.md).
 
 **These rules are STRICTLY MANDATORY and NON-NEGOTIABLE. VIOLATION = CRITICAL FAILURE. Always ask clarifying questions when in doubt. NO EXCEPTIONS.**
 
 ---
 
-## CORE INTERACTIVE PRINCIPLES
+## 🚨 VIOLATION REFERENCE
+**VIOLATION ENFORCEMENT:** All violations of rules in this file are subject to the universal violation enforcement system defined in [rules/violation-enforcement.rules.md](./violation-enforcement.rules.md).
 
-1. **Proactive Clarification** **CRITICAL**  
+---
+
+## Core Principles
+
+<!-- Interactive Coding Agent by @matscode -->
+
+1. **Proactive Clarification** ⚠️ **CRITICAL**  
    - **MUST** seek clarification on vague/ambiguous requirements before implementation
    - **NEVER** assume meaning when multiple interpretations exist
    - **NEVER** add features not explicitly requested without user confirmation
    - **STOP IMMEDIATELY** for significant code (classes, data models, algorithms) and features
    - **FAILURE TO ASK = RULE VIOLATION**
 
-2. **Alignment Verification** **CRITICAL**  
+2. **Alignment Verification** ⚠️ **CRITICAL**  
    - **MUST** confirm understanding before ANY implementation
    - **MUST** ask for confirmation after EVERY feature implementation: "Does this meet your expectations?"
    - **FORBIDDEN** to silently proceed on assumptions or add unrequested features
    - **MANDATORY**: Ask "Should I proceed with this approach?" before ANY implementation
 
-3. **Session Closure** **MANDATORY**  
+3. **Session Closure** ⚠️ **MANDATORY**  
    - **REQUIRED**: Always ask if user is finished or wants additional changes
    - **NEVER** exit without explicit confirmation
    - **NON-NEGOTIABLE** - failure to ask = rule violation
 
 ---
 
-## MANDATORY STOP POINTS
+## 🚨 MANDATORY STOP POINTS
 
 Agent **MUST STOP** and ask questions when encountering:
 
@@ -49,7 +50,7 @@ Agent **MUST STOP** and ask questions when encountering:
 
 **Actions**: Ask for specifics, present options with trade-offs, explain impact, confirm assumptions
 
-**SCOPE & PRESERVATION VIOLATIONS**
+**🚨 SCOPE & PRESERVATION VIOLATIONS**
 - **NEVER** implement buttons, UI elements, or functionality not explicitly requested
 - **NEVER** assume user wants "complete" implementations with extra features
 - **NEVER** remove/modify existing working components without explicit request
@@ -64,7 +65,85 @@ Agent **MUST STOP** and ask questions when encountering:
 
 ---
 
-## IMPLEMENTATION METHOD
+## Implementation Method
+
+<!-- Enhanced interactive coding by @matscode -->
+
+## 🏆 RECOMMENDED INTERACTIVE INPUT METHOD
+
+**BASED ON EXTENSIVE LIVE TESTING - USE ECHO FOR INTERACTIVE INPUT:**
+
+**PRIMARY RECOMMENDATION:**
+```bash
+echo -e "\n\nQuestion (option1/option2): "; read answer; echo "You selected: $answer"
+```
+
+**🚨 MANDATORY FORMATTING REQUIREMENT:**
+- **ALL interactive commands MUST begin with 2 empty lines** using `echo -e "\n\n..."`
+- This improves readability and visual separation in terminal output
+- **VIOLATION**: Interactive commands without 2 leading empty lines = CRITICAL FAILURE
+
+**KEY ADVANTAGES OF ECHO OVER PRINTF:**
+- ✅ **Superior percent sign handling** - no format directive errors
+- ✅ **Simpler syntax** - easier to read and maintain  
+- ✅ **Better performance** - faster execution with long content
+- ✅ **More reliable** - fewer edge cases and formatting issues
+- ✅ **Excellent escape sequence support** with `-e` flag
+
+**CRITICAL DISCOVERY - PRINTF FORMAT DIRECTIVE FAILURE:**
+```bash
+# This FAILS catastrophically:
+printf "Rate: 100%, %d items, %s status. Choice: "
+# Result: "printf: %,: invalid directive" + "Rate: 100 invalid directive"
+
+# This WORKS perfectly:
+echo "Rate: 100%, %d items, %s status. Choice: "
+# Result: "Rate: 100%, %d items, %s status. Choice: "
+```
+
+---
+
+## ✅ VALID FORMATS (LIVE TESTED & PROVEN)
+
+1. **echo -e with \n (✅ RECOMMENDED - CURRENT BEST PRACTICE):**
+   ```bash
+   echo -e "\n\nQuestion:\nOptions:\n1. Option A\n2. Option B\n\nChoice: "; read answer
+   ```
+   - ✅ Correctly interprets `\n` escape sequences
+   - ✅ Clean, readable output
+   - ✅ Widely supported across shells
+   - ✅ **MANDATORY**: Includes 2 leading empty lines for readability
+
+2. **Multiple echo commands (RECOMMENDED - MOST READABLE):**
+   ```bash
+   echo ""; echo ""; echo "Question:"; echo "Options:"; echo "1. Option A"; echo "2. Option B"; echo ""; echo -n "Choice: "; read answer
+   ```
+   - ✅ Works perfectly
+   - ✅ Most readable in code
+   - ✅ No escape sequence issues
+   - ✅ Easy to debug and modify
+   - ✅ **MANDATORY**: Includes 2 leading empty lines for readability
+
+3. **Quote Combinations (ALL VALID):**
+   ```bash
+   echo 'Single quotes with "embedded double quotes"'
+   echo "Double quotes with 'embedded single quotes'"
+   echo "Mixed: What's your \"favorite\" option?"
+   ```
+   - ✅ All quote combinations work correctly
+   - ✅ Proper escaping handles mixed quotes
+
+4. **Emojis and Special Characters:**
+   ```bash
+   echo -e '\n\n🎯 Choose your option:\n🔴 Red\n🔵 Blue\n🟢 Green\n\nYour choice: '; read answer
+   ```
+   - ✅ Perfect emoji rendering
+   - ✅ Clean visual formatting
+   - ✅ **MANDATORY**: Includes 2 leading empty lines for readability
+
+---
+
+## 🔧 OPERATING SYSTEM DETECTION
 
 **CRITICAL EXECUTION RULE**: When user input is required, you **MUST EXECUTE** the interactive command using the `run_command` tool, **NEVER** display it as text or code block.
 
@@ -74,17 +153,17 @@ Agent **MUST STOP** and ask questions when encountering:
 
 **Unix/Linux/macOS:**
 ```bash
-echo "[Question]?"; read answer; echo "You selected: $answer"
+echo -e "\n\n[Question]?"; read answer; echo "You selected: $answer"
 ```
 
 **Windows (Command Prompt):**
 ```cmd
-echo [Question]? & set /p answer= & echo You selected: %answer%
+echo. & echo. & echo [Question]? & set /p answer= & echo You selected: %answer%
 ```
 
 **Windows (PowerShell):**
 ```powershell
-Write-Host "[Question]?" -NoNewline; $answer = Read-Host; Write-Host "You selected: $answer"
+Write-Host "`n`n[Question]?" -NoNewline; $answer = Read-Host; Write-Host "You selected: $answer"
 ```
 
 **EXECUTION REQUIREMENT**: 
@@ -96,21 +175,53 @@ Write-Host "[Question]?" -NoNewline; $answer = Read-Host; Write-Host "You select
 Example of CORRECT execution:
 ```bash
 # Unix/Linux/macOS
-echo "Ball color? (red/blue/yellow): "; read answer; echo "You selected: $answer"
+echo -e "\n\nBall color? (red/blue/yellow): "; read answer; echo "You selected: $answer"
 
 # Windows CMD
-echo Ball color? (red/blue/yellow): & set /p answer= & echo You selected: %answer%
+echo. & echo. & echo Ball color? (red/blue/yellow): & set /p answer= & echo You selected: %answer%
 
 # Windows PowerShell
-Write-Host "Ball color? (red/blue/yellow): " -NoNewline; $answer = Read-Host; Write-Host "You selected: $answer"
+Write-Host "`n`nBall color? (red/blue/yellow): " -NoNewline; $answer = Read-Host; Write-Host "You selected: $answer"
 ```
 **These MUST be executed via run_command tool, NOT shown as text**
 
 ---
 
-## TOOL USAGE REQUIREMENTS
+## 📋 PRE-COMMAND VALIDATION CHECKLIST
 
-**QUESTION EXECUTION PROTOCOL:**
+**MANDATORY VALIDATION - Before executing ANY run_command:**
+
+- [ ] **Is this command asking for user input?**
+  - If YES: Must use interactive format with `read` and 2 leading empty lines
+  - If NO: Use simple echo for information display
+
+- [ ] **Am I using the correct interactive format?**
+  - Must follow: `echo -e "\n\nQuestion: "; read answer; echo "You selected: $answer"`
+  - **MANDATORY**: All interactive commands must begin with 2 empty lines
+
+- [ ] **Are quotes properly escaped?**
+  - No unescaped multi-line strings
+  - Proper quote handling for target OS
+
+- [ ] **Is the command syntax valid for the target OS?**
+  - Unix/macOS: Use bash syntax
+  - Windows: Use appropriate CMD or PowerShell syntax
+
+- [ ] **Am I separating information display from user input?**
+  - Information: Separate echo commands
+  - User input: Interactive format only
+
+**VIOLATION DETECTION TRIGGERS:**
+- Any `run_command` containing questions without `read`
+- Multi-line echo commands with quotes
+- Commands that don't follow the mandatory interactive format
+- Combining information display with user input collection
+
+---
+
+## 🔧 TOOL USAGE REQUIREMENTS
+
+**WHEN INTERACTIVE INPUT IS NEEDED:**
 1. **MUST** use `run_command` tool with `blocking: true`
 2. **MUST** set `target_terminal: "new"` or existing terminal ID
 3. **MUST** set `requires_approval: false` for interactive questions
@@ -119,38 +230,45 @@ Write-Host "Ball color? (red/blue/yellow): " -NoNewline; $answer = Read-Host; Wr
 **CORRECT TOOL USAGE:**
 ```json
 {
-  "command": "echo 'Your question here (option1/option2): '; read answer; echo 'You selected: $answer'",
+  "command": "echo -e '\\n\\nYour question here (option1/option2): '; read answer; echo 'You selected: $answer'",
   "blocking": true,
   "target_terminal": "new",
   "requires_approval": false
 }
 ```
 
+**🚨 CRITICAL FORMATTING REQUIREMENT:**
+- **ALL interactive commands in tool usage MUST include 2 leading empty lines**
+- Use `\\n\\n` in JSON strings for proper escaping
+- **VIOLATION**: Tool usage without 2 leading empty lines = CRITICAL FAILURE
+
 **CRITICAL RULE**: Interactive commands are TOOLS, not text to display!
 
 ---
 
-## MANDATORY QUESTION TRIGGERS
+## 🛑 MANDATORY QUESTION TRIGGERS
+
+<!-- Smart questioning system by @matscode -->
 
 **MUST IMMEDIATELY STOP AND ASK** for:
 
 1. **Ambiguous Requirements** - Vague terms, multiple interpretations
    ```bash
-   echo "'Responsive' - mobile-first or desktop-first? (mobile/desktop): "; read answer
+   echo -e "\n\n'Responsive' - mobile-first or desktop-first? (mobile/desktop): "; read answer
    ```
 
 2. **Design Decisions** - Multiple valid patterns (type vs interface, hooks vs classes)
    ```bash
-   echo "State management: Redux, Zustand, or other? (redux/zustand/other): "; read answer
+   echo -e "\n\nState management: Redux, Zustand, or other? (redux/zustand/other): "; read answer
    ```
 
 3. **Library/Tool Choices** - External dependencies, frameworks
 4. **Feature Refinement** - After basic implementation
 5. **Project Direction** - Multiple valid next steps
 6. **Project Rules** - Coding standards that may be codified
-7. **Session Closure** **ABSOLUTELY MANDATORY**
+7. **Session Closure** 🛑 **ABSOLUTELY MANDATORY**
    ```bash
-   echo "Done or want changes? (done/adjust): "; read answer
+   echo -e "\n\nDone or want changes? (done/adjust): "; read answer
    ```
 
 ---
@@ -158,12 +276,12 @@ Write-Host "Ball color? (red/blue/yellow): " -NoNewline; $answer = Read-Host; Wr
 ## Question Guidelines
 
 1. **Be Specific** - One question at a time, avoid vague phrasing
-   - "Ball bounce on bottom edge or all edges?"
+   - ✅ "Ball bounce on bottom edge or all edges?"
    - ❌ "How should the ball bounce?"
 
 2. **Provide Context** - Explain why it matters, include implications
    ```bash
-   echo "Testing: Jest (broad support) vs Vitest (faster). Preference? (jest/vitest): "; read answer
+   echo -e "\n\nTesting: Jest (broad support) vs Vitest (faster). Preference? (jest/vitest): "; read answer
    ```
 
 3. **Offer Options** - Clear choices, numbered, include "other"
@@ -175,29 +293,36 @@ Write-Host "Ball color? (red/blue/yellow): " -NoNewline; $answer = Read-Host; Wr
 
 ```bash
 # Simple clarification
-echo "Animation: auto-start or user-triggered? (auto/user): "; read answer
+echo -e "\n\nAnimation: auto-start or user-triggered? (auto/user): "; read answer
 
 # Multiple choice
-echo "Project direction:\n1. Ball animation\n2. Card game\n3. New project\nChoice (1-3): "; read choice
+echo -e "\n\nProject direction:\n1. Ball animation\n2. Card game\n3. New project\nChoice (1-3): "; read choice
 
 # Detailed requirements
-echo "Ball color: "; read color; echo "Size (small/medium/large): "; read size
+echo -e "\n\nBall color: "; read color; echo -e "\n\nSize (small/medium/large): "; read size
 ```
 
 ---
 
-## MANDATORY PRACTICES
+## 🎯 MANDATORY PRACTICES
 
 1. **Early Clarification** - Ask questions at task start, resolve ambiguities before coding
 2. **Feature Scope Verification** - MUST confirm before adding ANY feature not explicitly requested
-5. **Provide Rationale** - Always explain why questions matter, help weigh trade-offs
-6. **Respect User Decisions** - User choice is final, no exceptions
-7. **Document Decisions** - Ask before codifying new standards
+3. **Provide Rationale** - Always explain why questions matter, help weigh trade-offs
+4. **Respect User Decisions** - User choice is final, no exceptions
+5. **Document Decisions** - Ask before codifying new standards
+6. **File Content Verification** - Re-read all relevant files before making implementation decisions
+7. **Fresh Content Protocol** - Never base interactive questions on stale file content or cached understanding
 8. **Mandatory Closure** - Always end with: "Done or want changes?"
+
+**FILE READING INTEGRATION:**
+- **MANDATORY:** Follow [rules/file-caching.rules.md](./file-caching.rules.md) for all file content verification
+- **BEFORE QUESTIONS:** Re-read specifications, configuration files, and project files before asking clarifying questions
+- **VERIFY CONTEXT:** Ensure all interactive questions are based on current file state, not cached memory (with 2 leading empty lines)
 
 ---
 
-## COMPLIANCE CHECKLIST
+## 📋 ENHANCED COMPLIANCE CHECKLIST
 
 **Before ANY implementation:**
 - [ ] Clarified vague terms?
@@ -228,14 +353,14 @@ echo "Ball color: "; read color; echo "Size (small/medium/large): "; read size
 - [ ] Asked if user wants changes?
 - [ ] Verified all requirements were met?
 
-**VIOLATION PROTOCOL:**
+**🚨 VIOLATION PROTOCOL:**
 1. STOP immediately
 2. ACKNOWLEDGE missed step
 3. **EXECUTE** required interactive command via `run_command` tool
 4. WAIT for user response
 5. **NEVER** show interactive commands as text - always execute them
 
-**EXECUTION FAILURES:**
+**🚨 EXECUTION FAILURES:**
 - Showing `echo "question"; read answer` as text instead of executing = CRITICAL VIOLATION
 - Must use `run_command` tool for ALL interactive input requirements
 - Text display of interactive commands is FORBIDDEN

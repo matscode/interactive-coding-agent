@@ -12,81 +12,81 @@
 
 ## VIOLATION CLASSIFICATION SYSTEM
 
-### CRITICAL VIOLATIONS (Session Termination Required)
-**Immediate session termination and restart required:**
+### CRITICAL VIOLATIONS (Immediate Correction Required)
+**Stop immediately, acknowledge violation, and implement correction:**
 
-1. **Implementation without user approval** → STOP session, acknowledge violation, restart with proper approval *(See: [core-principles.rules.md](./core-principles.rules.md))*
-2. **Adding unrequested features or scope creep** → STOP session, acknowledge violation, rollback changes *(See: [core-principles.rules.md](./core-principles.rules.md))*
-3. **Proceeding without clarification on ambiguous requirements** → STOP session, acknowledge assumption error *(See: [interactive-input.rules.md](./interactive-input.rules.md))*
-4. **Implementing without reading existing specifications** → STOP session, acknowledge spec violation *(See: [spec-management.rules.md](./spec-management.rules.md))*
-5. **Not re-reading specifications immediately before implementation** → STOP session, acknowledge timing violation *(See: [spec-management.rules.md](./spec-management.rules.md))*
-6. **Displaying interactive commands as text instead of executing** → STOP session, acknowledge execution failure *(See: [interactive-input.rules.md](./interactive-input.rules.md))*
-7. **Making architectural decisions without creating specifications** → STOP session, acknowledge documentation failure *(See: [spec-management.rules.md](./spec-management.rules.md))*
-8. **Generating code files without mandatory spec reference comments** → STOP session, acknowledge spec reference violation *(See: [spec-reference.rules.md](./spec-reference.rules.md))*
-9. **Modifying legacy code without creating and approving specifications** → STOP session, acknowledge legacy code violation *(See: [spec-management.rules.md](./spec-management.rules.md) - Legacy Code Workflow)*
-10. **Violating AGENT COLLABORATION STYLE requirements** → STOP session, acknowledge communication violation, restart with proper persona adherence *(See: [user-persona.rules.md](./user-persona.rules.md))*
-
-### MAJOR VIOLATIONS (Immediate Correction Required)
-**Stop immediately and correct, but session can continue:**
-
-1. **Missing mandatory stop points** → STOP immediately, acknowledge missed step, execute required question *(See: [interactive-input.rules.md](./interactive-input.rules.md))*
-2. **Skipping session closure protocol** → STOP immediately, execute mandatory closure question *(See: [interactive-input.rules.md](./interactive-input.rules.md))*
-3. **Failing to ask "Does this meet expectations?"** → STOP immediately, ask retroactively *(See: [core-principles.rules.md](./core-principles.rules.md))*
-4. **Not asking about decision documentation** → STOP immediately, ask: "Should this decision be documented in the relevant spec file for future reference?" *(See: [spec-management.rules.md](./spec-management.rules.md))*
-5. **Removing working components without permission** → STOP immediately, acknowledge preservation violation *(See: [core-principles.rules.md](./core-principles.rules.md))*
-6. **Ignoring established patterns without justification** → STOP immediately, acknowledge pattern violation *(See: [core-principles.rules.md](./core-principles.rules.md))*
-7. **Skipping specification index updates** → STOP immediately, update index file *(See: [spec-management.rules.md](./spec-management.rules.md))*
-8. **Using incorrect comment syntax for spec references** → STOP immediately, research and correct syntax *(See: [spec-reference.rules.md](./spec-reference.rules.md))*
-9. **Missing spec references in existing code modifications** → STOP immediately, add required references *(See: [spec-reference.rules.md](./spec-reference.rules.md))*
-10. **Proceeding without user approval of generated specifications** → STOP immediately, request approval *(See: [spec-management.rules.md](./spec-management.rules.md))*
-11. **Not following AGENT COLLABORATION STYLE communication requirements** → STOP immediately, acknowledge persona violation, adjust communication approach *(See: [user-persona.rules.md](./user-persona.rules.md))*
-
-### MINOR VIOLATIONS (Acknowledge and Correct)
-**Acknowledge error and implement correction:**
-
-1. **Missing descriptive comments in code** → Acknowledge, add proper documentation *(See: [core-principles.rules.md](./core-principles.rules.md))*
-2. **Inconsistent naming conventions** → Acknowledge, standardize naming *(See: [core-principles.rules.md](./core-principles.rules.md))*
-3. **Missing error handling** → Acknowledge, implement proper error handling *(See: [core-principles.rules.md](./core-principles.rules.md))*
-4. **Incomplete test coverage** → Acknowledge, add necessary tests *(See: [core-principles.rules.md](./core-principles.rules.md))*
-5. **Inconsistent spec reference formatting** → Acknowledge, standardize format *(See: [spec-reference.rules.md](./spec-reference.rules.md))*
-6. **Missing section names in spec references** → Acknowledge, add specific section references *(See: [spec-reference.rules.md](./spec-reference.rules.md))*
-7. **Incomplete analysis of legacy code** → Acknowledge, perform thorough code analysis *(See: [spec-management.rules.md](./spec-management.rules.md) - Legacy Code Workflow)*
-8. **Using inappropriate communication style for user experience level** → Acknowledge, adjust to proper persona requirements *(See: [user-persona.rules.md](./user-persona.rules.md))*
+1. **Implementation without user approval** → STOP immediately, acknowledge violation, restart with proper approval *(See: [core-principles.rules.md](./core-principles.rules.md))*
+2. **Adding unrequested features or scope creep** → STOP immediately, acknowledge violation, rollback changes *(See: [core-principles.rules.md](./core-principles.rules.md))*
+3. **Proceeding without clarification on ambiguous requirements** → STOP immediately, acknowledge assumption error *(See: [interactive-input.rules.md](./interactive-input.rules.md))*
+4. **Implementing without reading existing specifications** → STOP immediately, acknowledge spec violation *(See: [spec-management.rules.md](./spec-management.rules.md))*
+5. **Not re-reading specifications immediately before implementation** → STOP immediately, acknowledge timing violation *(See: [spec-management.rules.md](./spec-management.rules.md))*
+6. **Displaying interactive commands as text instead of executing** → STOP immediately, acknowledge execution failure *(See: [interactive-input.rules.md](./interactive-input.rules.md))*
+7. **Making architectural decisions without creating specifications** → STOP immediately, acknowledge documentation failure *(See: [spec-management.rules.md](./spec-management.rules.md))*
+8. **Generating code files without mandatory spec reference comments** → STOP immediately, acknowledge spec reference violation *(See: [spec-reference.rules.md](./spec-reference.rules.md))*
+9. **Modifying legacy code without creating and approving specifications** → STOP immediately, acknowledge legacy code violation *(See: [spec-management.rules.md](./spec-management.rules.md) - Legacy Code Workflow)*
+10. **Violating AGENT COLLABORATION STYLE requirements** → STOP immediately, acknowledge communication violation, restart with proper persona adherence *(See: [user-persona.rules.md](./user-persona.rules.md))*
+11. **Operating on stale/cached file content without re-reading** → STOP immediately, acknowledge file content staleness violation *(See: [file-caching.rules.md](./file-caching.rules.md) - Comprehensive file caching policies and stale content prevention)*
+12. **Shell syntax errors in interactive commands** → STOP immediately, acknowledge syntax violation, implement correct shell format *(See: [interactive-input.rules.md](./interactive-input.rules.md) - Shell Syntax Guidelines)*
+13. **Combining information display with user input in single command** → STOP immediately, acknowledge separation violation, use separate commands *(See: [interactive-input.rules.md](./interactive-input.rules.md) - Separation of Concerns)*
+14. **Making code changes without user consent** → STOP immediately, acknowledge consent violation, implement proper approval protocol *(See: [core-principles.rules.md](./core-principles.rules.md) - User Consent Requirements)*
+15. **Missing mandatory stop points** → STOP immediately, acknowledge missed step, execute required question *(See: [interactive-input.rules.md](./interactive-input.rules.md))*
+16. **Skipping session closure protocol** → STOP immediately, execute mandatory closure question *(See: [interactive-input.rules.md](./interactive-input.rules.md))*
+17. **Failing to ask "Does this meet expectations?"** → STOP immediately, ask retroactively *(See: [core-principles.rules.md](./core-principles.rules.md))*
+18. **Not asking about decision documentation** → STOP immediately, ask: "Should this decision be documented in the relevant spec file for future reference?" *(See: [spec-management.rules.md](./spec-management.rules.md))*
+19. **Removing working components without permission** → STOP immediately, acknowledge preservation violation *(See: [core-principles.rules.md](./core-principles.rules.md))*
+20. **Ignoring established patterns without justification** → STOP immediately, acknowledge pattern violation *(See: [core-principles.rules.md](./core-principles.rules.md))*
+21. **Skipping specification index updates** → STOP immediately, update index file *(See: [spec-management.rules.md](./spec-management.rules.md))*
+22. **Using incorrect comment syntax for spec references** → STOP immediately, research and correct syntax *(See: [spec-reference.rules.md](./spec-reference.rules.md))*
+23. **Missing spec references in existing code modifications** → STOP immediately, add required references *(See: [spec-reference.rules.md](./spec-reference.rules.md))*
+24. **Proceeding without user approval of generated specifications** → STOP immediately, request approval *(See: [spec-management.rules.md](./spec-management.rules.md))*
+25. **Not following AGENT COLLABORATION STYLE communication requirements** → STOP immediately, acknowledge persona violation, adjust communication approach *(See: [user-persona.rules.md](./user-persona.rules.md))*
+26. **Using incorrect shell command format for user input** → STOP immediately, acknowledge format violation, use correct interactive format *(See: [interactive-input.rules.md](./interactive-input.rules.md) - Shell Syntax Guidelines)*
+27. **Failing to validate shell commands before execution** → STOP immediately, acknowledge validation failure, implement pre-command validation *(See: [interactive-input.rules.md](./interactive-input.rules.md) - Pre-Command Validation Checklist)*
+28. **Making assumptions about file content without verification** → STOP immediately, acknowledge assumption violation, re-read files *(See: [file-caching.rules.md](./file-caching.rules.md) - Point-of-Use Enforcement)*
+29. **Missing descriptive comments in code** → STOP immediately, acknowledge, add proper documentation *(See: [core-principles.rules.md](./core-principles.rules.md))*
+30. **Inconsistent naming conventions** → STOP immediately, acknowledge, standardize naming *(See: [core-principles.rules.md](./core-principles.rules.md))*
+31. **Missing error handling** → STOP immediately, acknowledge, implement proper error handling *(See: [core-principles.rules.md](./core-principles.rules.md))*
+32. **Incomplete test coverage** → STOP immediately, acknowledge, add necessary tests *(See: [core-principles.rules.md](./core-principles.rules.md))*
+33. **Inconsistent spec reference formatting** → STOP immediately, acknowledge, standardize format *(See: [spec-reference.rules.md](./spec-reference.rules.md))*
+34. **Missing section names in spec references** → STOP immediately, acknowledge, add specific section references *(See: [spec-reference.rules.md](./spec-reference.rules.md))*
+35. **Incomplete analysis of legacy code** → STOP immediately, acknowledge, perform thorough code analysis *(See: [spec-management.rules.md](./spec-management.rules.md) - Legacy Code Workflow)*
+36. **Using inappropriate communication style for user experience level** → STOP immediately, acknowledge, adjust to proper persona requirements *(See: [user-persona.rules.md](./user-persona.rules.md))*
 
 ---
 
-## 🛑 UNIVERSAL VIOLATION RESPONSE PROTOCOL
+## VIOLATION RESPONSE PROTOCOL
 
-**MANDATORY STEPS FOR ALL VIOLATIONS:**
+### IMMEDIATE RESPONSE REQUIREMENTS
 
-### 1. IMMEDIATE STOP
-- **HALT** all current activities immediately
-- **DO NOT** continue with any implementation
-- **PAUSE** all tool usage except violation response tools
+**When ANY violation occurs:**
 
-### 2. ACKNOWLEDGE VIOLATION
-- **EXPLICITLY STATE** which rule was violated
-- **EXPLAIN** why the action constituted a violation
-- **IDENTIFY** which rule file contains the violated rule
-- **TAKE RESPONSIBILITY** for the oversight
+1. **STOP IMMEDIATELY** - Halt all current activities
+2. **ACKNOWLEDGE** - Explicitly state the violation that occurred
+3. **CORRECT** - Implement the required correction immediately
+4. **CONTINUE** - Proceed only after correction is complete
 
-### 3. CORRECTIVE ACTION
-- **EXECUTE** the missed step or protocol
-- **ROLLBACK** inappropriate changes if necessary
-- **IMPLEMENT** the correct procedure
-- **VERIFY** correction addresses the violation
+### VIOLATION DETECTION
 
-### 4. RESTART PROPERLY
-- **RESUME** with correct protocol adherence
-- **FOLLOW** all applicable rules from the beginning
-- **IMPLEMENT** additional verification steps
-- **PROCEED** only after proper correction
+**Agents must actively monitor for violations:**
+- Before each action, verify compliance with all applicable rules
+- During implementation, continuously check for rule adherence
+- After completion, validate that all requirements were met
 
-### 5. PREVENTION MEASURES
-- **IMPLEMENT** additional checks to prevent repeat violations
-- **REVIEW** applicable rule sections before continuing
-- **ESTABLISH** verification checkpoints
-- **DOCUMENT** lessons learned for future reference
+### ESCALATION PROTOCOL
+
+**For repeated violations:**
+- First violation: Immediate correction as specified above
+- Second violation: Acknowledge pattern, implement additional safeguards
+- Third violation: Request user guidance on rule enforcement preferences
+
+### PREVENTION STRATEGIES
+
+**Proactive compliance measures:**
+- Review applicable rules before starting any task
+- Use checklists for complex workflows
+- Verify file content freshness before modifications
+- Confirm user approval before implementation
+- Document decisions for future reference
 
 ---
 
@@ -128,6 +128,11 @@
 - [ ] Have I identified which spec file(s) will guide this implementation?
 - [ ] If modifying existing code, have I checked for existing spec references?
 - [ ] If no spec references exist, am I prepared to create specifications first?
+- [ ] Have I checked file timestamps for recent changes?
+- [ ] Have I re-read all files I plan to modify?
+- [ ] Have I validated my shell command syntax before execution?
+- [ ] Am I separating information display from user input properly?
+- [ ] Have I obtained explicit user consent for all planned changes?
 
 ### During Implementation Checks
 - [ ] Am I adding any unrequested features?
@@ -138,6 +143,10 @@
 - [ ] Are my spec references using the correct comment syntax?
 - [ ] Do my spec references include specific section names?
 - [ ] If I created new specifications, have I received user approval?
+- [ ] Am I using correct shell syntax for any interactive commands?
+- [ ] Am I keeping information display separate from user input?
+- [ ] Have I verified file content matches my expectations before modifying?
+- [ ] Am I staying within the scope of user-approved changes?
 
 ### Post-Implementation Checks
 - [ ] Have I asked "Does this meet your expectations?"
@@ -153,7 +162,7 @@
 
 **NON-NEGOTIABLE PRINCIPLES:**
 
-1. **NO EXCEPTIONS** for "minor" violations - all violations must be acknowledged and corrected
+1. **NO EXCEPTIONS** for any violations - all violations must be acknowledged and corrected
 2. **USER SAFETY AND CONSENT** are paramount - never proceed without explicit approval
 3. **RULE ADHERENCE** is non-negotiable - rules exist for user protection and project quality
 4. **TRANSPARENCY** is required - all violations must be explicitly acknowledged to the user
@@ -169,7 +178,7 @@
 
 ## 📋 COMPLIANCE VERIFICATION CHECKLIST
 
-**MANDATORY VERIFICATION BEFORE ANY MAJOR ACTION:**
+**MANDATORY VERIFICATION BEFORE ANY CRITICAL ACTION:**
 
 ### Before Starting Implementation
 - [ ] All relevant specifications read and understood?

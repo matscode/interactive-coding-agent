@@ -25,6 +25,12 @@ ALL generated code files MUST include spec reference comments that clearly ident
 [COMMENT_SYNTAX] Implementation based on: [project-specs/<filename>.spec.md] - Section: [Specific Section Name]
 ```
 
+**CRITICAL: NEVER USE JSDOC OR COMPLEX FORMATS**
+- **FORBIDDEN:** JSDoc-style formats with @fileoverview, @specification, @lastUpdated
+- **FORBIDDEN:** Multi-line documentation blocks for spec references
+- **REQUIRED:** Simple single-line comment format only
+- **STANDARD:** Use the exact format shown above with appropriate comment syntax
+
 ### LANGUAGE-SPECIFIC COMMENT ADAPTATION
 
 **AGENT RESPONSIBILITY:**
@@ -103,12 +109,16 @@ When modifying existing code files, agents MUST:
 3. **FOLLOW** the patterns and requirements from referenced specs
 4. **MAINTAIN** consistency with existing spec-driven implementations
 5. **UPDATE** spec references when adding new functionality
+6. **VERIFY** all new code includes proper spec references
+7. **CONFIRM** spec references match the actual specifications being implemented
 
 ### MODIFICATION PROTOCOL
 - **PRESERVE** existing spec references unless they become obsolete
 - **ADD** new spec references for additional functionality
 - **UPDATE** section references if spec sections change
 - **MAINTAIN** the same comment format as existing references
+- **VALIDATE** that all modifications include appropriate spec references
+- **CROSS-CHECK** spec references against actual specification content
 
 ### LEGACY CODE HANDLING
 
@@ -148,6 +158,15 @@ For complete workflow requirements when handling legacy code without specificati
 - **IMMEDIATE IMPLEMENTATION** - Add references during initial code generation
 - **CONSISTENT FORMAT** - Use language-appropriate comment syntax
 - **COMPLETE INFORMATION** - Include both spec file and section names
+- **VERIFICATION REQUIRED** - Agent must verify spec references are added to ALL created/modified files
+- **POST-IMPLEMENTATION CHECK** - After any code generation, confirm spec references are present
+
+**CRITICAL VIOLATION PREVENTION:**
+- **NEVER** create or modify code files without adding spec reference comments
+- **ALWAYS** verify spec references are included before completing implementation
+- **STOP IMMEDIATELY** if spec references are missing from generated code
+- **REVIEW ALL FILES** created or modified during implementation for spec references
+- **VERIFY** format matches the standard before completing implementation
 
 **VIOLATION CONSEQUENCES:**
 All violations are subject to the universal violation enforcement system defined in [violation-enforcement.rules.md](./violation-enforcement.rules.md).
