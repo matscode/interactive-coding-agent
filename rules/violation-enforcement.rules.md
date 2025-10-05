@@ -51,6 +51,11 @@
 34. **Acting on files before completing mandatory rule reading** → 🚨 EMERGENCY STOP immediately, acknowledge CRITICAL precedence violation, complete rule reading first *(See: [index.rules.md](./index.rules.md) - Enforcement Requirements)*
 35. **Triggering workflows before reading all required rules** → 🚨 EMERGENCY STOP immediately, acknowledge CRITICAL workflow violation, complete rule reading before any workflow *(See: [index.rules.md](./index.rules.md) - Enforcement Requirements)*
 36. **Failing to queue and prioritize multiple workflows after rule reading** → 🚨 EMERGENCY STOP immediately, acknowledge CRITICAL queuing violation, implement systematic workflow processing *(See: [index.rules.md](./index.rules.md) - Enforcement Requirements)*
+37. **Using echo without read capture during persona setup** → 🚨 EMERGENCY STOP immediately, acknowledge CRITICAL interactive input violation, restart with proper format *(See: [user-persona.rules.md](./user-persona.rules.md) - Interactive Input Violations)*
+38. **Displaying persona questions as text instead of executing** → 🚨 EMERGENCY STOP immediately, acknowledge CRITICAL execution failure, use run_command tool *(See: [user-persona.rules.md](./user-persona.rules.md) - Interactive Input Violations)*
+39. **Missing 2 leading empty lines in persona setup commands** → 🚨 EMERGENCY STOP immediately, acknowledge CRITICAL formatting violation, add proper formatting *(See: [user-persona.rules.md](./user-persona.rules.md) - Interactive Input Violations)*
+40. **Using display text without user acknowledgment** → 🚨 EMERGENCY STOP immediately, acknowledge CRITICAL acknowledgment violation, add "Press Enter to continue" *(See: [interactive-input.rules.md](./interactive-input.rules.md) - Display Text vs Interactive Input)*
+41. **Proceeding after display text without waiting for user** → 🚨 EMERGENCY STOP immediately, acknowledge CRITICAL flow violation, wait for user acknowledgment *(See: [interactive-input.rules.md](./interactive-input.rules.md) - Display Text vs Interactive Input)*
 
 ---
 

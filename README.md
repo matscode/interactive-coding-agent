@@ -58,8 +58,12 @@ Want just the essentials? Copy these:
 - **Windsurf**: Copy `.windsurf/` folder
 - **Kiro**: Copy `.kiro/` folder
 
-### Activation
-After copying files, **start a new chat** in your editor. The rules activate automatically.
+### Rule Activation
+- Close and reopen project (optional but recommended)
+- Start a new chat
+- Prompt your agent to "Read workspace rules"
+
+**First Time Expectation:** Once rules are read, the user persona creation workflow should be triggered to create your `user-persona.spec.md`
 
 ## 👤 User Persona System
 

@@ -144,7 +144,56 @@ echo "Rate: 100%, %d items, %s status. Choice: "
 
 ---
 
-## 🔧 OPERATING SYSTEM DETECTION
+## 🔍 CRITICAL DISTINCTION: DISPLAY TEXT vs INTERACTIVE INPUT
+
+**AGENTS MUST UNDERSTAND THE DIFFERENCE:**
+
+### 📺 DISPLAY-ONLY TEXT
+**Purpose**: Show information, status, or messages WITHOUT expecting user input
+**Format**: Simple `echo` commands
+**Requirements**: 
+- **MANDATORY**: Must end with "Press Enter to continue" or "Type what you'd like to change"
+- **MANDATORY**: Must use `read` to wait for user acknowledgment before proceeding
+- **NO INPUT CAPTURE**: User response is not stored or processed
+
+**EXAMPLE - DISPLAY ONLY** (DO NOT EXECUTE - FOR REFERENCE ONLY):
+```bash
+echo -e "\n\n✅ TASK COMPLETED\n\nI have successfully implemented the requested feature.\n\nPress Enter to continue or type what you'd like to change: "; read acknowledgment
+```
+
+### 🎯 INTERACTIVE INPUT
+**Purpose**: Ask questions and CAPTURE user responses for decision-making
+**Format**: Interactive `echo` with `read` and confirmation
+**Requirements**:
+- **MANDATORY**: Must capture user input with `read answer`
+- **MANDATORY**: Must confirm selection with `echo "You selected: $answer"`
+- **MANDATORY**: Must include 2 leading empty lines
+- **INPUT PROCESSING**: User response is stored and used for logic
+
+**EXAMPLE - INTERACTIVE INPUT** (DO NOT EXECUTE - FOR REFERENCE ONLY):
+```bash
+echo -e "\n\nChoose your option (1/2/3): "; read answer; echo "You selected: $answer"
+```
+
+### 🚨 CRITICAL VIOLATIONS
+- **DISPLAY AS INTERACTIVE**: Using display text format for questions that need answers
+- **INTERACTIVE AS DISPLAY**: Using interactive format for simple information display
+- **MISSING ACKNOWLEDGMENT**: Display text without "Press Enter" or user acknowledgment
+- **MISSING CONFIRMATION**: Interactive input without "You selected" confirmation
+
+### 🔄 KEY BEHAVIORAL DIFFERENCE
+
+**DISPLAY-ONLY TEXT BEHAVIOR:**
+- **Empty Input (Enter/Exit)**: Agent CONTINUES with tasks - this is expected behavior
+- **User Types Something**: Agent PROCESSES that input as feedback/modifications
+- **Purpose**: Allow user to acknowledge completion OR provide feedback
+
+**INTERACTIVE INPUT BEHAVIOR:**
+- **Empty Input**: Agent CAN ask user to provide input again (validation)
+- **User Types Something**: Agent PROCESSES that input as the answer to the question
+- **Purpose**: Capture specific user decisions for logic flow
+
+---
 
 **CRITICAL EXECUTION RULE**: When user input is required, you **MUST EXECUTE** the interactive command using the `run_command` tool, **NEVER** display it as text or code block.
 
@@ -309,8 +358,9 @@ echo -e "\n\nBall color: "; read color; echo -e "\n\nSize (small/medium/large): 
 
 1. **Early Clarification** - Ask questions at task start, resolve ambiguities before coding
 2. **Feature Scope Verification** - MUST confirm before adding ANY feature not explicitly requested
-3. **Provide Rationale** - Always explain why questions matter, help weigh trade-offs
-4. **Respect User Decisions** - User choice is final, no exceptions
+3. **Display Text Acknowledgment** - ALL display-only text MUST require user acknowledgment before proceeding
+4. **Provide Rationale** - Always explain why questions matter, help weigh trade-offs
+5. **Respect User Decisions** - User choice is final, no exceptions
 5. **Document Decisions** - Ask before codifying new standards
 6. **File Content Verification** - Re-read all relevant files before making implementation decisions
 7. **Fresh Content Protocol** - Never base interactive questions on stale file content or cached understanding
@@ -342,6 +392,11 @@ echo -e "\n\nBall color: "; read color; echo -e "\n\nSize (small/medium/large): 
 - [ ] Confirmed no unrequested features were added?
 - [ ] Validated implementation scope matches user request?
 - [ ] Asked if user wants modifications?
+
+**For ALL display-only text:**
+- [ ] Included "Press Enter to continue" or "Type what you'd like to change"?
+- [ ] Used `read` to wait for user acknowledgment?
+- [ ] Avoided proceeding without user acknowledgment?
 
 **REFACTORING-SPECIFIC CHECKLIST:**
 - [ ] Preserved ALL original functionality?
