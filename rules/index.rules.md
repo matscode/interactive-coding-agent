@@ -18,15 +18,12 @@
    - File modifications, creations, deletions FORBIDDEN until rules are read
    - Includes viewing, editing, or analyzing any project files
 
-3. **All required rules must be read before triggering any rules workflow**
+3. **All required rules must be read before triggering workflows or handling user requests in every new session**
    - Persona setup, spec creation, violation enforcement FORBIDDEN until rules are read
-   - No workflow exceptions - rules reading is the prerequisite for ALL workflows
-
-4. **All required rules must be read and understood before proceeding with user requests in every new session**
-   - Agent must complete reading all required rules before handling user requests
-   - Rule reading takes precedence over file operations, code changes, or other agent actions
-   - After rule reading completion, agent proceeds with Core Agent Workflow from core-principles.rules.md
-   - Ensures comprehensive rule compliance before proceeding with user requests
+   - User request handling, file operations, code changes FORBIDDEN until rules are read
+   - No workflow exceptions - rules reading is the prerequisite for ALL workflows and user interactions
+   - After rule reading completion, agent proceeds with Core Agent Workflow from [rules/core-principles.rules.md](./core-principles.rules.md)
+   - Ensures comprehensive rule compliance before proceeding with any agent activities
 
 **VIOLATION:** Proceeding without reading rules = CRITICAL VIOLATION requiring immediate session restart
 
