@@ -259,7 +259,7 @@ edit_file/update_file [with updated current content understanding]
 
 ### Violation Consequences
 
-**CRITICAL VIOLATION** - Violations result in immediate corrective action and rule reload requirement.
+All violations are subject to the universal violation enforcement system defined in [violation-enforcement.rules.md](./violation-enforcement.rules.md).
 
 ---
 

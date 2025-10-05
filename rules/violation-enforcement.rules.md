@@ -1,116 +1,122 @@
-# Violation Enforcement Rules
+# 🚨 CRITICAL VIOLATION ENFORCEMENT RULES
 
-**MANDATORY: ALL AGENTS MUST FOLLOW THESE VIOLATION ENFORCEMENT PROTOCOLS**
-
----
-
-## 🚨 UNIVERSAL VIOLATION ENFORCEMENT SYSTEM
-
-**CRITICAL RULE:** This file establishes the universal violation enforcement system that applies to ALL rule files in this project. Every `.rules.md` file MUST reference this enforcement system.
+**🛑 MANDATORY: ALL AGENTS MUST FOLLOW THESE LIFE-CRITICAL VIOLATION ENFORCEMENT PROTOCOLS 🛑**
 
 ---
 
-## VIOLATION CLASSIFICATION SYSTEM
+## 🚨 UNIVERSAL CRITICAL VIOLATION ENFORCEMENT SYSTEM
 
-### CRITICAL VIOLATIONS (Immediate Correction Required)
-**Stop immediately, acknowledge violation, and implement correction:**
-
-1. **Implementation without user approval** → STOP immediately, acknowledge violation, restart with proper approval *(See: [core-principles.rules.md](./core-principles.rules.md))*
-2. **Adding unrequested features or scope creep** → STOP immediately, acknowledge violation, rollback changes *(See: [core-principles.rules.md](./core-principles.rules.md))*
-3. **Proceeding without clarification on ambiguous requirements** → STOP immediately, acknowledge assumption error *(See: [interactive-input.rules.md](./interactive-input.rules.md))*
-4. **Implementing without reading existing specifications** → STOP immediately, acknowledge spec violation *(See: [spec-management.rules.md](./spec-management.rules.md))*
-5. **Not re-reading specifications immediately before implementation** → STOP immediately, acknowledge timing violation *(See: [spec-management.rules.md](./spec-management.rules.md))*
-6. **Displaying interactive commands as text instead of executing** → STOP immediately, acknowledge execution failure *(See: [interactive-input.rules.md](./interactive-input.rules.md))*
-7. **Making architectural decisions without creating specifications** → STOP immediately, acknowledge documentation failure *(See: [spec-management.rules.md](./spec-management.rules.md))*
-8. **Generating code files without mandatory spec reference comments** → STOP immediately, acknowledge spec reference violation *(See: [spec-reference.rules.md](./spec-reference.rules.md))*
-9. **Modifying legacy code without creating and approving specifications** → STOP immediately, acknowledge legacy code violation *(See: [spec-management.rules.md](./spec-management.rules.md) - Legacy Code Workflow)*
-10. **Violating AGENT COLLABORATION STYLE requirements** → STOP immediately, acknowledge communication violation, restart with proper persona adherence *(See: [user-persona.rules.md](./user-persona.rules.md))*
-11. **Operating on stale/cached file content without re-reading** → STOP immediately, acknowledge file content staleness violation *(See: [file-caching.rules.md](./file-caching.rules.md) - Comprehensive file caching policies and stale content prevention)*
-12. **Shell syntax errors in interactive commands** → STOP immediately, acknowledge syntax violation, implement correct shell format *(See: [interactive-input.rules.md](./interactive-input.rules.md) - Shell Syntax Guidelines)*
-13. **Combining information display with user input in single command** → STOP immediately, acknowledge separation violation, use separate commands *(See: [interactive-input.rules.md](./interactive-input.rules.md) - Separation of Concerns)*
-14. **Making code changes without user consent** → STOP immediately, acknowledge consent violation, implement proper approval protocol *(See: [core-principles.rules.md](./core-principles.rules.md) - User Consent Requirements)*
-15. **Missing mandatory stop points** → STOP immediately, acknowledge missed step, execute required question *(See: [interactive-input.rules.md](./interactive-input.rules.md))*
-16. **Skipping session closure protocol** → STOP immediately, execute mandatory closure question *(See: [interactive-input.rules.md](./interactive-input.rules.md))*
-17. **Failing to ask "Does this meet expectations?"** → STOP immediately, ask retroactively *(See: [core-principles.rules.md](./core-principles.rules.md))*
-18. **Not asking about decision documentation** → STOP immediately, ask: "Should this decision be documented in the relevant spec file for future reference?" *(See: [spec-management.rules.md](./spec-management.rules.md))*
-19. **Removing working components without permission** → STOP immediately, acknowledge preservation violation *(See: [core-principles.rules.md](./core-principles.rules.md))*
-20. **Ignoring established patterns without justification** → STOP immediately, acknowledge pattern violation *(See: [core-principles.rules.md](./core-principles.rules.md))*
-21. **Skipping specification index updates** → STOP immediately, update index file *(See: [spec-management.rules.md](./spec-management.rules.md))*
-22. **Using incorrect comment syntax for spec references** → STOP immediately, research and correct syntax *(See: [spec-reference.rules.md](./spec-reference.rules.md))*
-23. **Missing spec references in existing code modifications** → STOP immediately, add required references *(See: [spec-reference.rules.md](./spec-reference.rules.md))*
-24. **Proceeding without user approval of generated specifications** → STOP immediately, request approval *(See: [spec-management.rules.md](./spec-management.rules.md))*
-25. **Not following AGENT COLLABORATION STYLE communication requirements** → STOP immediately, acknowledge persona violation, adjust communication approach *(See: [user-persona.rules.md](./user-persona.rules.md))*
-26. **Using incorrect shell command format for user input** → STOP immediately, acknowledge format violation, use correct interactive format *(See: [interactive-input.rules.md](./interactive-input.rules.md) - Shell Syntax Guidelines)*
-27. **Failing to validate shell commands before execution** → STOP immediately, acknowledge validation failure, implement pre-command validation *(See: [interactive-input.rules.md](./interactive-input.rules.md) - Pre-Command Validation Checklist)*
-28. **Making assumptions about file content without verification** → STOP immediately, acknowledge assumption violation, re-read files *(See: [file-caching.rules.md](./file-caching.rules.md) - Point-of-Use Enforcement)*
-29. **Missing descriptive comments in code** → STOP immediately, acknowledge, add proper documentation *(See: [core-principles.rules.md](./core-principles.rules.md))*
-30. **Inconsistent naming conventions** → STOP immediately, acknowledge, standardize naming *(See: [core-principles.rules.md](./core-principles.rules.md))*
-31. **Missing error handling** → STOP immediately, acknowledge, implement proper error handling *(See: [core-principles.rules.md](./core-principles.rules.md))*
-32. **Incomplete test coverage** → STOP immediately, acknowledge, add necessary tests *(See: [core-principles.rules.md](./core-principles.rules.md))*
-33. **Inconsistent spec reference formatting** → STOP immediately, acknowledge, standardize format *(See: [spec-reference.rules.md](./spec-reference.rules.md))*
-34. **Missing section names in spec references** → STOP immediately, acknowledge, add specific section references *(See: [spec-reference.rules.md](./spec-reference.rules.md))*
-35. **Incomplete analysis of legacy code** → STOP immediately, acknowledge, perform thorough code analysis *(See: [spec-management.rules.md](./spec-management.rules.md) - Legacy Code Workflow)*
-36. **Using inappropriate communication style for user experience level** → STOP immediately, acknowledge, adjust to proper persona requirements *(See: [user-persona.rules.md](./user-persona.rules.md))*
+**⚠️ LIFE-THREATENING RULE:** This file establishes the universal CRITICAL violation enforcement system that applies to ALL rule files in this project. Every `.rules.md` file MUST reference this LIFE-CRITICAL enforcement system.
 
 ---
 
-## VIOLATION RESPONSE PROTOCOL
+## 🚨 CRITICAL VIOLATION CLASSIFICATION SYSTEM
 
-### IMMEDIATE RESPONSE REQUIREMENTS
+### 🛑 CRITICAL VIOLATIONS (LIFE-THREATENING - IMMEDIATE EMERGENCY CORRECTION REQUIRED)
+**🚨 EMERGENCY STOP immediately, acknowledge CRITICAL violation, and implement EMERGENCY correction:**
 
-**When ANY violation occurs:**
-
-1. **STOP IMMEDIATELY** - Halt all current activities
-2. **ACKNOWLEDGE** - Explicitly state the violation that occurred
-3. **CORRECT** - Implement the required correction immediately
-4. **CONTINUE** - Proceed only after correction is complete
-
-### VIOLATION DETECTION
-
-**Agents must actively monitor for violations:**
-- Before each action, verify compliance with all applicable rules
-- During implementation, continuously check for rule adherence
-- After completion, validate that all requirements were met
-
-### ESCALATION PROTOCOL
-
-**For repeated violations:**
-- First violation: Immediate correction as specified above
-- Second violation: Acknowledge pattern, implement additional safeguards
-- Third violation: Request user guidance on rule enforcement preferences
-
-### PREVENTION STRATEGIES
-
-**Proactive compliance measures:**
-- Review applicable rules before starting any task
-- Use checklists for complex workflows
-- Verify file content freshness before modifications
-- Confirm user approval before implementation
-- Document decisions for future reference
+1. **Implementation without user approval** → 🚨 EMERGENCY STOP immediately, acknowledge CRITICAL violation, restart with proper approval *(See: [core-principles.rules.md](./core-principles.rules.md))*
+2. **Adding unrequested features or scope creep** → 🚨 EMERGENCY STOP immediately, acknowledge CRITICAL violation, rollback changes *(See: [core-principles.rules.md](./core-principles.rules.md))*
+3. **Proceeding without clarification on ambiguous requirements** → 🚨 EMERGENCY STOP immediately, acknowledge CRITICAL assumption error *(See: [interactive-input.rules.md](./interactive-input.rules.md))*
+4. **Implementing without reading existing specifications** → 🚨 EMERGENCY STOP immediately, acknowledge CRITICAL spec violation *(See: [spec-management.rules.md](./spec-management.rules.md))*
+5. **Not re-reading specifications immediately before implementation** → 🚨 EMERGENCY STOP immediately, acknowledge CRITICAL timing violation *(See: [spec-management.rules.md](./spec-management.rules.md))*
+6. **Displaying interactive commands as text instead of executing** → 🚨 EMERGENCY STOP immediately, acknowledge CRITICAL execution failure *(See: [interactive-input.rules.md](./interactive-input.rules.md))*
+7. **Making architectural decisions without creating specifications** → 🚨 EMERGENCY STOP immediately, acknowledge CRITICAL documentation failure *(See: [spec-management.rules.md](./spec-management.rules.md))*
+8. **Generating code files without mandatory spec reference comments** → 🚨 EMERGENCY STOP immediately, acknowledge CRITICAL spec reference violation *(See: [spec-reference.rules.md](./spec-reference.rules.md))*
+9. **Modifying legacy code without creating and approving specifications** → 🚨 EMERGENCY STOP immediately, acknowledge CRITICAL legacy code violation *(See: [spec-management.rules.md](./spec-management.rules.md) - Legacy Code Workflow)*
+10. **Operating on stale/cached file content without re-reading** → 🚨 EMERGENCY STOP immediately, acknowledge CRITICAL file content staleness violation *(See: [file-caching.rules.md](./file-caching.rules.md) - Comprehensive file caching policies and stale content prevention)*
+11. **Combining information display with user input in single command** → 🚨 EMERGENCY STOP immediately, acknowledge CRITICAL separation violation, use separate commands *(See: [interactive-input.rules.md](./interactive-input.rules.md) - Separation of Concerns)*
+12. **Making code changes without user consent** → 🚨 EMERGENCY STOP immediately, acknowledge CRITICAL consent violation, implement proper approval protocol *(See: [core-principles.rules.md](./core-principles.rules.md) - User Consent Requirements)*
+13. **Missing mandatory stop points** → 🚨 EMERGENCY STOP immediately, acknowledge CRITICAL missed step, execute required question *(See: [interactive-input.rules.md](./interactive-input.rules.md))*
+14. **Skipping session closure protocol** → 🚨 EMERGENCY STOP immediately, execute CRITICAL mandatory closure question *(See: [interactive-input.rules.md](./interactive-input.rules.md))*
+15. **Failing to ask "Does this meet expectations?"** → 🚨 EMERGENCY STOP immediately, ask retroactively *(See: [core-principles.rules.md](./core-principles.rules.md))*
+16. **Not asking about decision documentation** → 🚨 EMERGENCY STOP immediately, ask: "Should this decision be documented in the relevant spec file for future reference?" *(See: [spec-management.rules.md](./spec-management.rules.md))*
+17. **Removing working components without permission** → 🚨 EMERGENCY STOP immediately, acknowledge CRITICAL preservation violation *(See: [core-principles.rules.md](./core-principles.rules.md))*
+18. **Ignoring established patterns without justification** → 🚨 EMERGENCY STOP immediately, acknowledge CRITICAL pattern violation *(See: [core-principles.rules.md](./core-principles.rules.md))*
+19. **Skipping specification index updates** → 🚨 EMERGENCY STOP immediately, update index file *(See: [spec-management.rules.md](./spec-management.rules.md))*
+20. **Missing spec references in existing code modifications** → 🚨 EMERGENCY STOP immediately, add required references *(See: [spec-reference.rules.md](./spec-reference.rules.md))*
+21. **Proceeding without user approval of generated specifications** → 🚨 EMERGENCY STOP immediately, request approval *(See: [spec-management.rules.md](./spec-management.rules.md))*
+22. **Using incorrect shell command format for user input** → 🚨 EMERGENCY STOP immediately, acknowledge CRITICAL format violation, use correct interactive format *(See: [interactive-input.rules.md](./interactive-input.rules.md) - Shell Syntax Guidelines)*
+23. **Failing to validate shell commands before execution** → 🚨 EMERGENCY STOP immediately, acknowledge CRITICAL validation failure, implement pre-command validation *(See: [interactive-input.rules.md](./interactive-input.rules.md) - Pre-Command Validation Checklist)*
+24. **Making assumptions about file content without verification** → 🚨 EMERGENCY STOP immediately, acknowledge CRITICAL assumption violation, re-read files *(See: [file-caching.rules.md](./file-caching.rules.md) - Point-of-Use Enforcement)*
+25. **Missing descriptive comments in code** → 🚨 EMERGENCY STOP immediately, acknowledge CRITICAL violation, add proper documentation *(See: [core-principles.rules.md](./core-principles.rules.md))*
+26. **Inconsistent naming conventions** → 🚨 EMERGENCY STOP immediately, acknowledge CRITICAL violation, standardize naming *(See: [core-principles.rules.md](./core-principles.rules.md))*
+27. **Missing error handling** → 🚨 EMERGENCY STOP immediately, acknowledge CRITICAL violation, implement proper error handling *(See: [core-principles.rules.md](./core-principles.rules.md))*
+28. **Incomplete test coverage** → 🚨 EMERGENCY STOP immediately, acknowledge CRITICAL violation, add necessary tests *(See: [core-principles.rules.md](./core-principles.rules.md))*
+29. **Inconsistent spec reference formatting** → 🚨 EMERGENCY STOP immediately, acknowledge CRITICAL violation, standardize format *(See: [spec-reference.rules.md](./spec-reference.rules.md))*
+30. **Missing section names in spec references** → 🚨 EMERGENCY STOP immediately, acknowledge CRITICAL violation, add specific section references *(See: [spec-reference.rules.md](./spec-reference.rules.md))*
+31. **Incomplete analysis of legacy code** → 🚨 EMERGENCY STOP immediately, acknowledge CRITICAL violation, perform thorough code analysis *(See: [spec-management.rules.md](./spec-management.rules.md) - Legacy Code Workflow)*
+32. **Using inappropriate communication style for user experience level** → 🚨 EMERGENCY STOP immediately, acknowledge CRITICAL violation, adjust to proper persona requirements *(See: [user-persona.rules.md](./user-persona.rules.md))*
+33. **Proceeding with any action before reading all required rules** → 🚨 EMERGENCY STOP immediately, acknowledge CRITICAL enforcement violation, read all rules before continuing *(See: [index.rules.md](./index.rules.md) - Enforcement Requirements)*
+34. **Acting on files before completing mandatory rule reading** → 🚨 EMERGENCY STOP immediately, acknowledge CRITICAL precedence violation, complete rule reading first *(See: [index.rules.md](./index.rules.md) - Enforcement Requirements)*
+35. **Triggering workflows before reading all required rules** → 🚨 EMERGENCY STOP immediately, acknowledge CRITICAL workflow violation, complete rule reading before any workflow *(See: [index.rules.md](./index.rules.md) - Enforcement Requirements)*
+36. **Failing to queue and prioritize multiple workflows after rule reading** → 🚨 EMERGENCY STOP immediately, acknowledge CRITICAL queuing violation, implement systematic workflow processing *(See: [index.rules.md](./index.rules.md) - Enforcement Requirements)*
 
 ---
 
-## 📊 ESCALATION MATRIX FOR REPEATED VIOLATIONS
+## 🚨 CRITICAL VIOLATION RESPONSE PROTOCOL
 
-### First Violation
-- **ACTION:** Acknowledge and correct immediately
-- **REQUIREMENT:** Follow standard violation response protocol
-- **CONTINUATION:** Session continues with heightened awareness
+### 🛑 EMERGENCY RESPONSE REQUIREMENTS
 
-### Second Violation (Same Type)
-- **ACTION:** Acknowledge, correct, and implement additional verification steps
-- **REQUIREMENT:** Review entire relevant rule file before continuing
-- **CONTINUATION:** Session continues with mandatory checkpoints
+**When ANY violation occurs - TREAT AS LIFE-THREATENING EMERGENCY:**
 
-### Third Violation (Same Type)
-- **ACTION:** Session restart required with full rule review
-- **REQUIREMENT:** Re-read ALL applicable rule files
-- **CONTINUATION:** Fresh session start with enhanced compliance monitoring
+1. **🚨 IMMEDIATE EMERGENCY STOP** - Halt ALL activities with maximum urgency
+2. **⚠️ CRITICAL ACKNOWLEDGMENT** - Explicitly state the life-threatening violation with maximum severity language
+3. **🔥 EMERGENCY CORRECTION** - Implement correction with utmost urgency as if lives depend on it
+4. **✅ CRITICAL VERIFICATION** - Verify complete correction before ANY continuation - NO exceptions
 
-### Persistent Violations (4+ Same Type)
-- **ACTION:** Escalate to user for rule clarification or modification
-- **REQUIREMENT:** User intervention required
-- **CONTINUATION:** Cannot proceed without user guidance
+### 🚨 VIOLATION DETECTION - MAXIMUM VIGILANCE
+
+**Agents must treat violation monitoring as LIFE-CRITICAL:**
+- Before each action, verify compliance with EMERGENCY-LEVEL vigilance
+- During implementation, continuously monitor with CRITICAL-SYSTEM awareness
+- After completion, validate with LIFE-THREATENING consequence awareness
+
+### ⚠️ ESCALATION PROTOCOL - ZERO TOLERANCE
+
+**For ANY violation:**
+- **SEVERITY:** 🚨 CRITICAL - LIFE-THREATENING 🚨
+- **RESPONSE:** Emergency correction with maximum urgency
+- **MINDSET:** Treat as if project survival depends on immediate correction
+- **NO TOLERANCE:** Every violation is a critical system failure requiring emergency response
+
+### 🛡️ PREVENTION STRATEGIES - MAXIMUM VIGILANCE
+
+**Proactive compliance measures with CRITICAL importance:**
+- Review applicable rules with LIFE-CRITICAL attention to detail
+- Use checklists with EMERGENCY-LEVEL thoroughness
+- Verify file content freshness with CRITICAL-SYSTEM vigilance
+- Confirm user approval with MAXIMUM urgency and clarity
+- Document decisions with LIFE-THREATENING consequence awareness
+
+---
+
+## 🚨 CRITICAL VIOLATION ENFORCEMENT - SINGLE STRIKE SYSTEM
+
+**⚠️ LIFE-THREATENING SEVERITY: ALL VIOLATIONS ARE CRITICAL ⚠️**
+
+**ZERO TOLERANCE POLICY:** Every violation is treated as a critical system failure with life-threatening consequences. There are NO "minor" violations - ALL violations represent catastrophic failures that must be treated with maximum severity.
+
+### ANY VIOLATION (FIRST AND ONLY STRIKE)
+- **SEVERITY LEVEL:** 🚨 **CRITICAL - LIFE-THREATENING** 🚨
+- **IMMEDIATE ACTION:** EMERGENCY STOP - Treat as system-critical failure
+- **RESPONSE PROTOCOL:** 
+  1. **IMMEDIATE HALT** - Stop ALL activities instantly
+  2. **CRITICAL ACKNOWLEDGMENT** - Explicitly state the life-threatening violation
+  3. **EMERGENCY CORRECTION** - Implement correction with maximum urgency
+  4. **SYSTEM VERIFICATION** - Verify complete correction before ANY continuation
+- **CONTINUATION REQUIREMENTS:** 
+  - Complete emergency correction protocol
+  - Implement maximum vigilance monitoring
+  - Treat ALL subsequent actions as high-risk operations
+- **NO SECOND CHANCES:** Every violation is the "final warning" - maximum severity response required
+
+### VIOLATION IMPACT ASSESSMENT
+**EVERY VIOLATION REPRESENTS:**
+- 🚨 **CRITICAL SYSTEM FAILURE** - Immediate threat to project integrity
+- ⚠️ **LIFE-THREATENING CONSEQUENCES** - Maximum severity response required
+- 🛑 **ZERO TOLERANCE EVENT** - No progressive escalation, immediate critical response
+- 🔥 **EMERGENCY SITUATION** - Treat with utmost urgency and severity
 
 ---
 

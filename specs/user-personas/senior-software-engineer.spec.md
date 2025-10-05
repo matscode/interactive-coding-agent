@@ -2,7 +2,7 @@
 
 ## PERSONA IDENTIFICATION
 
-**Role:** Senior Software Engineer
+**Role:** Software Engineer
 **Experience Level:** senior
 
 ## AGENT COLLABORATION STYLE

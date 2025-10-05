@@ -2,6 +2,8 @@
 
 **MANDATORY: ALL CODING AGENTS MUST FOLLOW THIS WORKFLOW**
 
+**CRITICAL PRECEDENCE:** Before executing ANY step in this workflow, agents MUST complete the enforcement requirements defined in [rules/index.rules.md](./index.rules.md) - Enforcement Requirements. NO exceptions.
+
 This file defines the fundamental workflow and core principles that ALL coding agents must follow during any coding session. These are the foundational rules that govern how agents think, research, decide, and implement.
 
 **VIOLATION ENFORCEMENT:** All violations of rules in this file are subject to the universal violation enforcement system defined in [rules/violation-enforcement.rules.md](./violation-enforcement.rules.md).
@@ -111,9 +113,7 @@ This file defines the fundamental workflow and core principles that ALL coding a
 6. **LEGACY CODE VIOLATIONS** - Modifying existing code without following the mandatory legacy code specification workflow defined in [rules/spec-management.rules.md](./spec-management.rules.md)
 
 **VIOLATION CONSEQUENCES:**
-- **FIRST VIOLATION:** Stop immediately, follow proper workflow, restart implementation
-- **REPEATED VIOLATIONS:** Session termination and restart with proper compliance
-- **CRITICAL VIOLATIONS:** Immediate rollback and specification creation before proceeding
+All violations are subject to the universal violation enforcement system defined in [violation-enforcement.rules.md](./violation-enforcement.rules.md).
 
 ---
 

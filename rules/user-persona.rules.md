@@ -12,6 +12,8 @@ This file defines how coding agents should adapt their communication style and i
 
 **CRITICAL REQUIREMENT: CODING AGENTS MUST HAVE A USER PERSONA SPEC IN MEMORY**
 
+**ENFORCEMENT PRECEDENCE:** This workflow can ONLY be initiated AFTER completing the enforcement requirements defined in [rules/index.rules.md](./index.rules.md) - Enforcement Requirements. Rule reading takes absolute precedence.
+
 **BEFORE ANY CODING SESSION, AGENTS MUST:**
 
 1. **CHECK FOR PERSONA SPEC:** Look for `specs/user-persona.spec.md` 
@@ -135,7 +137,7 @@ CONTINUE with session
 
 ---
 
-## VIOLATION CONSEQUENCES
+## VIOLATION CONSEQUENCES - SINGLE STRIKE SYSTEM
 
 **FAILURE TO SETUP PERSONA:**
 1. **CRITICAL ERROR:** Session cannot proceed without persona spec

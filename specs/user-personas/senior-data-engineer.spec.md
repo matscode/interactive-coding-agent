@@ -2,7 +2,7 @@
 
 ## PERSONA IDENTIFICATION
 
-**Role:** Senior Data Engineer
+**Role:** Data Engineer
 **Experience Level:** senior
 
 ## AGENT COLLABORATION STYLE

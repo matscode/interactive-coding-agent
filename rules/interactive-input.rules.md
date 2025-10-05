@@ -61,7 +61,8 @@ Agent **MUST STOP** and ask questions when encountering:
   - Removing working ContactCard component during "cleanup"
 - **CORRECT APPROACH**: Ask "Should I add features like accept/decline buttons?" or "Should I preserve existing [component] or modify it?"
 
-**Violation Consequences**: Acknowledge missed opportunity → ask retroactively → restart session if repeated → rollback if critical
+**Violation Consequences:**
+All violations are subject to the universal violation enforcement system defined in [violation-enforcement.rules.md](./violation-enforcement.rules.md).
 
 ---
 

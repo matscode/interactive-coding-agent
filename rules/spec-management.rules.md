@@ -2,6 +2,8 @@
 
 **MANDATORY: ALL AGENTS MUST FOLLOW THESE SPECIFICATION RULES**
 
+**ENFORCEMENT PRECEDENCE:** All specification workflows can ONLY be initiated AFTER completing the enforcement requirements defined in [rules/index.rules.md](./index.rules.md) - Enforcement Requirements. Rule reading takes absolute precedence over spec creation or management.
+
 **VIOLATION ENFORCEMENT:** All violations of rules in this file are subject to the universal violation enforcement system defined in [rules/violation-enforcement.rules.md](./violation-enforcement.rules.md).
 
 ---
@@ -312,9 +314,7 @@ Before creating any specification file, agents MUST ask these questions to ensur
 - Index file updates are CRITICAL - never skip this step
 
 **VIOLATION CONSEQUENCES:**
-- **FIRST VIOLATION:** Stop immediately, create required specification, restart implementation
-- **REPEATED VIOLATIONS:** Session termination and restart with proper spec compliance
-- **CRITICAL VIOLATIONS:** Immediate rollback and specification creation before proceeding
+All violations are subject to the universal violation enforcement system defined in [violation-enforcement.rules.md](./violation-enforcement.rules.md).
 
 ---
 

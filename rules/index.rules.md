@@ -6,6 +6,32 @@
 
 ---
 
+## 🚨 ENFORCEMENT REQUIREMENTS
+
+**CRITICAL:** These 4 enforcement requirements take absolute precedence over all other actions:
+
+1. **Reading all required rules takes precedence over any agent action**
+   - NO exceptions - rules must be read before ANY file operations, code changes, or workflow triggers
+   - Agent MUST halt all activities until rule reading is complete
+
+2. **All required rules must be read before acting on any file**
+   - File modifications, creations, deletions FORBIDDEN until rules are read
+   - Includes viewing, editing, or analyzing any project files
+
+3. **All required rules must be read before triggering any rules workflow**
+   - Persona setup, spec creation, violation enforcement FORBIDDEN until rules are read
+   - No workflow exceptions - rules reading is the prerequisite for ALL workflows
+
+4. **All required rules must be read and understood before proceeding with user requests in every new session**
+   - Agent must complete reading all required rules before handling user requests
+   - Rule reading takes precedence over file operations, code changes, or other agent actions
+   - After rule reading completion, agent proceeds with Core Agent Workflow from core-principles.rules.md
+   - Ensures comprehensive rule compliance before proceeding with user requests
+
+**VIOLATION:** Proceeding without reading rules = CRITICAL VIOLATION requiring immediate session restart
+
+---
+
 ## REQUIRED READING
 
 **MANDATORY:** Read ALL rule files in this exact order before any coding session:
