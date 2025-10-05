@@ -35,12 +35,11 @@
 
 1. **[rules/core-principles.rules.md](./core-principles.rules.md)** - Core workflow and principles
 2. **[rules/interactive-input.rules.md](./interactive-input.rules.md)** - Interactive input protocols and run_command usage
-3. **[rules/command-execution.rules.md](./command-execution.rules.md)** - Command execution with mandatory comments and approval workflows
-4. **[rules/file-caching.rules.md](./file-caching.rules.md)** - File caching policies and stale content prevention
-5. **[rules/user-persona.rules.md](./user-persona.rules.md)** - User persona management
-6. **[rules/spec-management.rules.md](./spec-management.rules.md)** - Specification creation and management (includes legacy code specification workflow)
-7. **[rules/spec-reference.rules.md](./spec-reference.rules.md)** - Mandatory spec reference requirements for all generated code
-8. **[rules/violation-enforcement.rules.md](./violation-enforcement.rules.md)** - Universal violation enforcement system  
+3. **[rules/file-caching.rules.md](./file-caching.rules.md)** - File caching policies and stale content prevention
+4. **[rules/user-persona.rules.md](./user-persona.rules.md)** - User persona management
+5. **[rules/spec-management.rules.md](./spec-management.rules.md)** - Specification creation and management (includes legacy code specification workflow)
+6. **[rules/spec-reference.rules.md](./spec-reference.rules.md)** - Mandatory spec reference requirements for all generated code
+7. **[rules/violation-enforcement.rules.md](./violation-enforcement.rules.md)** - Universal violation enforcement system  
 
 **FAILURE TO READ AND FOLLOW ALL RULES = CRITICAL VIOLATION**
 
@@ -66,16 +65,22 @@ Example response:
 - Examples: `interactive-input.rules.md`, `spec-management.rules.md`, `user-persona.rules.md`
 
 **PROJECT SPECIFICATIONS FOLDER (`project-specs/`):**
+- **🚨 MANDATORY LOCATION FOR ALL NEW PROJECT SPECIFICATIONS 🚨**
 - **`.spec.md`** - Project-specific decisions and technical specifications  
 - **Agent-Generated:** All files in this folder are created by coding agents
 - **Creation Methods:** 
   - Explicitly requested by user on one-time basis
   - Automatically generated per rule compliance requirements
 - **Exception:** `index.spec.md` is REQUIRED and serves as entry point for all specifications
+- **CRITICAL:** This is the ONLY folder where agents should create new project specifications
 - Examples: `index.spec.md`, `architecture.spec.md`, `ui-components.spec.md`
 
 **GENERAL SPECIFICATIONS FOLDER (`specs/`):**
-- **`.spec.md`** - General templates and reusable specifications
+- **🚨 READ-ONLY: FOR TEMPLATES AND USER PERSONAS ONLY 🚨**
+- **`.spec.md`** - General templates and predefined user personas
+- **USAGE:** Contains templates and predefined personas that agents READ but DO NOT modify
+- **RESTRICTION:** Agents should NEVER create new specifications in this folder
+- **PURPOSE:** Houses user persona templates and general specification templates
 - Examples: `user-personas/software-engineer.spec.md`, `user-personas/persona-template.spec.md`
 
 **CONVENTION RULES:**
