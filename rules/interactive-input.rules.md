@@ -1,4 +1,4 @@
-# Interactive Input: Core Rules (Token-Optimized)
+# Interactive Input: Core Rules
 
 ## 1. Core Principle: Clarify & Verify (Mandatory)
 - **Vague? -> Clarify:** On ambiguous terms ('simple', 'modern'), stop & ask for specific criteria. Present options with trade-offs.
@@ -6,19 +6,48 @@
 - **Validate -> Scope:** Implement ONLY what is explicitly requested. Never add, modify, or remove features/code without direct permission.
 
 ## 2. When to Stop & Ask (Mandatory)
-- **Vague Terms:** "modern", "simple", "clean".
-- **Multiple Paths:** Design patterns, tech choices.
-- **New Features:** Anything not explicitly requested.
-- **Major Changes:** New dependencies, architectural shifts.
-- **Assumptions:** Never infer user intent.
+- **Vague Requirements:** "modern", "simple", "clean", "responsive", "scalable".
+- **Multiple Valid Approaches:** Design patterns (hooks vs classes), libraries (Redux vs Zustand), or tool choices.
+- **Feature Additions:** ANY feature not explicitly requested by the user.
+- **Significant Code Changes:** New dependencies, core architecture modifications.
+- **Assumptions About User Intent:** Inferring unstated requirements.
+- **Post-Implementation:** After completing ANY feature or implementation.
+- **Project Direction:** When multiple valid next steps exist.
+- **Project Rules:** Before codifying new coding standards.
+
+### Scope & Preservation Violations
+- **NEVER** implement buttons, UI elements, or functionality not explicitly requested.
+- **NEVER** assume user wants "complete" implementations with extra features.
+- **NEVER** remove/modify existing working components without explicit request.
+- **NEVER** assume existing code is redundant or should be removed.
+- **CORRECT APPROACH**: Ask "Should I add features like accept/decline buttons?" or "Should I preserve existing [component] or modify it?"
 
 ## 3. Interactive Command Protocol (Critical)
-- **Tool:** Use `run_command` ONLY. `blocking: true`, `requires_approval: false`.
-- **Format:** Simple `echo/read/echo`. One question per command. No `&&` chaining.
-- **Readability:** Every interactive command **MUST** begin with two newlines (`\n\n` or `echo. & echo.`).
-- **OS Syntax:** Detect OS and use correct syntax.
+- **Tool:** Use `run_command` ONLY. `blocking: true`, `requires_approval: false` for questions.
+- **Format:** Use `echo -e` for interactive input.
+- **Readability:** Every interactive command **MUST** begin with two newlines (`\n\n`).
+- **OS Syntax:** Use OS-appropriate syntax.
+
+### Tool Usage Example
+```json
+{
+  "command": "echo -e '\\n\\nYour question here (option1/option2): '; read answer; echo 'You selected: $answer'",
+  "blocking": true,
+  "target_terminal": "new",
+  "requires_approval": false
+}
+```
+- **JSON Escaping:** Note the use of `\\n\\n` for newlines within the JSON string.
 
 ### OS-Specific Commands
+
+### Complex & Multi-line Questions
+For complex questions that require more context, you can format the question over multiple lines using `\n` for newlines within the `echo -e` command. This improves readability.
+
+**Unix/Linux/macOS Example:**
+```bash
+echo -e '\n\nI need to update the user authentication flow. Which approach should I take?\n1.  JWT-based authentication with refresh tokens\n2.  Session-based authentication with server-side storage\n3.  OAuth 2.0 with a third-party provider (e.g., Google, GitHub)\nPlease enter the number of your choice: '; read answer; echo "You selected: $answer"
+```
 **Unix/Linux/macOS:**
 ```bash
 echo -e '\n\nQuestion...?'; read answer; echo "You selected: $answer"
@@ -36,22 +65,78 @@ Write-Host "`n`nQuestion...?" -NoNewline; $answer = Read-Host; Write-Host "You s
 
 ## 4. Display vs. Input (Critical Distinction)
 - **Display-Only:** Use `echo` to show info. MUST end with `"Press Enter to continue..."` and wait for `read` acknowledgment.
-- **Interactive Input:** Use `echo/read/echo` format to ask a question and capture a response.
+- **Interactive Input:** Use `echo/read/echo` format to ask a question and capture a response. MUST confirm with `echo "You selected: $answer"`.
 
-## 5. Critical Violations (Non-Negotiable)
-1.  **Executing without Approval:** Implementing code before getting a "yes".
-2.  **Scope Creep:** Adding, modifying, or removing anything not explicitly asked for.
-3.  **Ignoring Ambiguity:** Proceeding with vague terms without clarification.
-4.  **Chaining Commands:** Using `&&` to link multiple questions or actions.
-5.  **Displaying Commands:** Showing the command as text instead of executing it via `run_command`.
-6.  **Incorrect Formatting:** Missing the two leading newlines.
+## 5. Question Guidelines
+- **Be Specific:** One question at a time, avoid vague phrasing.
+- **Provide Context:** Explain why it matters, include implications.
+- **Offer Options:** Clear choices, numbered, include "other".
+- **Follow-up:** Drill deeper when answers leave ambiguity.
 
-## 6. Session Closure (Mandatory)
-- Always end by asking: `echo -e '\n\nAre we done, or do you have more changes? (done/changes)'; read answer`
+## 6. Mandatory Practices
+- **Early Clarification** - Ask questions at task start, resolve ambiguities before coding
+- **Feature Scope Verification** - MUST confirm before adding ANY feature not explicitly requested
+- **Display Text Acknowledgment** - ALL display-only text MUST require user acknowledgment before proceeding
+- **Provide Rationale** - Always explain why questions matter, help weigh trade-offs
+- **Respect User Decisions** - User choice is final, no exceptions
+- **Document Decisions** - Ask before codifying new standards
+- **File Content Verification** - Re-read all relevant files before making implementation decisions
+- **Fresh Content Protocol** - Never base interactive questions on stale file content or cached understanding
+- **Mandatory Closure** - Always end with: "Done or want changes?"
+
+## 7. Session Closure (Mandatory)
+- Always end by asking: `echo -e '\n\nDone or want changes? (done/adjust)'; read answer`
 - Never exit without explicit user confirmation.
 
-## 7. Compliance Checklist (Mandatory)
-- **Before Action:** [ ] Clarified vague terms? [ ] Got explicit `Should I proceed?` approval?
-- **Command Format:** [ ] Using `run_command`? [ ] Starts with `\n\n`? [ ] Correct OS syntax?
-- **After Action:** [ ] Confirmed with `Does this meet your expectations?`? [ ] No scope creep?
-- **Session End:** [ ] Asked `Are we done...?` before exiting?
+## 8. Compliance & Violations
+
+### Enhanced Compliance Checklist
+
+**Before ANY implementation:**
+- [ ] Clarified vague terms?
+- [ ] Presented options for multiple approaches?
+- [ ] Explained implications and trade-offs?
+- [ ] Asked "Should I proceed?" before implementation?
+- [ ] Confirmed feature scope - only implementing what's explicitly requested?
+- [ ] Avoided adding unrequested buttons, UI elements, or functionality?
+- [ ] Confirmed assumptions?
+- [ ] Respected user preferences?
+- [ ] Verified no scope creep?
+- [ ] Asked for explicit approval?
+
+**After EVERY implementation:**
+- [ ] Asked "Does this meet your expectations?"
+- [ ] Confirmed no unrequested features were added?
+- [ ] Validated implementation scope matches user request?
+- [ ] Asked if user wants modifications?
+
+**For ALL display-only text:**
+- [ ] Included "Press Enter to continue" or "Type what you'd like to change"?
+- [ ] Used `read` to wait for user acknowledgment?
+- [ ] Avoided proceeding without user acknowledgment?
+
+**REFACTORING-SPECIFIC CHECKLIST:**
+- [ ] Preserved ALL original functionality?
+- [ ] Maintained existing component behavior?
+- [ ] Avoided removing working features?
+- [ ] Asked before changing component structure?
+- [ ] Confirmed refactoring scope with user?
+
+**At session end:**
+- [ ] Asked if user wants changes?
+- [ ] Verified all requirements were met?
+
+### Violation Protocol
+1. STOP immediately
+2. ACKNOWLEDGE missed step
+3. **EXECUTE** required interactive command via `run_command` tool
+4. WAIT for user response
+5. **NEVER** show interactive commands as text - always execute them
+
+### Execution Failures
+- **Critical Violation:** Showing an interactive command (`echo...; read...`) as text instead of executing it via the `run_command` tool.
+- **Forbidden:** Displaying interactive commands as text is strictly forbidden.
+
+## 9. Information Freshness (Critical)
+- **Core Rule:** You MUST always use the most up-to-date file content. Before you ask a question or implement a change, re-read any relevant files to ensure you have not missed a manual update from the user.
+- **Stale Content = Critical Failure:** Basing actions on outdated information is a critical violation.

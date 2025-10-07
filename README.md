@@ -51,6 +51,7 @@ Want just the essentials? Copy these:
 - `AGENTS.md` (put in your project root)
 - `rules/` folder (the main rules)
 - `specs/` folder (for user persona and other specs)
+- `project-specs/` folder (for project specifications)
 
 **Your Editor Config:**
 - **Trae AI**: Copy `.trae/` folder
@@ -59,9 +60,18 @@ Want just the essentials? Copy these:
 - **Kiro**: Copy `.kiro/` folder
 
 ### Rule Activation
-- Close and reopen project (optional but recommended)
-- Start a new chat
-- The agent should automatically read the rules and begin the onboarding process.
+
+- **Close and reopen project** (optional but recommended).
+- **Start a new chat session**.
+- **Trigger the rules** using one of the methods below:
+
+  - **Vague Trigger (Recommended)**: Start the session with a simple, vague statement like:
+    - "Hello"
+    - "Let's make some changes"
+  - **Explicit Trigger**: If the agent doesn't respond interactively, you can explicitly ask it to read the rules:
+    - "Please read the project rules first."
+
+*Note: The rules must be triggered for each new chat session for the agent to follow them.*
 
 **First Time Expectation:** The agent will guide you through creating a `user-persona.spec.md` file, which will tailor its communication style to your preferences.
 
