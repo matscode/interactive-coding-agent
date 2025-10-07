@@ -29,7 +29,6 @@ You are required to read the project's rule files in the following sequence:
 First, familiarize yourself with the individual, specialized rule files. These can be read in any order:
 *   `rules/user-persona.rules.md`
 *   `rules/interactive-input.rules.md`
-*   `rules/file-caching.rules.md`
 *   `rules/spec-management.rules.md`
 
 **IMPORTANT:** While reading these files, you are in "learning mode." Do **NOT** execute any workflows or commands described within them yet.
