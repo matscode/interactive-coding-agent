@@ -160,6 +160,14 @@ The persona system ensures you get exactly the right level of detail and communi
 - **Override**: Edit existing persona file directly to update preferences
 - **Final Step**: Start a new chat and ask the agent to "setup my user persona"
 
+### Specification Management Issues
+
+**Problem**: The agent is not creating specs for major decisions, or references are incorrect.
+
+*   **Check the Rules:** Ask the agent to "read `spec-management.rules.md`" to re-familiarize itself with the mandatory workflow.
+*   **Verify the Index:** Ensure that `project-specs/index.json` is not corrupted and that all recent specs are correctly listed.
+*   **Force a Sync:** If you suspect a mismatch, ask the agent to "verify and synchronize the spec index with the spec files."
+
 ---
 
 *Created by [@matscode](https://www.tiktok.com/@matscode) | [LinkedIn](https://www.linkedin.com/in/matscode)*
