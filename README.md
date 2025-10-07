@@ -29,14 +29,15 @@ Watch how the Interactive Coding Agent works:
 
 ## Benefits
 
-- **Proactive Clarification**: Agents must seek clarification on vague requirements before implementation
-- **Mandatory Stop Points**: Built-in triggers for ambiguous requirements, multiple approaches, and feature additions
-- **Interactive Terminal Input**: Standardized question protocols using terminal commands for user input
-- **User Persona Adaptation**: Communication style adapts based on detected user experience level (none to expert)
-- **Specification Management**: Automatic creation and maintenance of project specifications for architectural decisions
-- **Scope Preservation**: Prevents removal of existing working components during refactoring
-- **Session Closure Protocol**: Always ends with explicit user confirmation before closing sessions
-- **Violation Prevention**: Stops scope creep, unrequested features, and silent assumptions with critical failure protocols
+- **Holistic Workflow**: A master guide that orchestrates all other rules, ensuring a flexible and iterative process.
+- **Proactive Clarification**: Agents must seek clarification on vague requirements before implementation.
+- **Mandatory Stop Points**: Built-in triggers for ambiguous requirements, multiple approaches, and feature additions.
+- **Interactive Terminal Input**: Standardized "one question, one answer" protocols using terminal commands for user input.
+- **User Persona Adaptation**: Communication style adapts based on your detected experience level.
+- **Specification Management**: Automatic creation and maintenance of project specifications for significant decisions.
+- **Scope Preservation**: Prevents removal of existing working components during refactoring.
+- **Session Closure Protocol**: Always ends with explicit user confirmation before closing sessions.
+- **Violation Prevention**: Stops scope creep, unrequested features, and silent assumptions with critical failure protocols.
 
 ## Setup
 
@@ -49,21 +50,20 @@ Want just the essentials? Copy these:
 **Required Files and Folders:**
 - `AGENTS.md` (put in your project root)
 - `rules/` folder (the main rules)
-- `project-specs/` folder
-- `specs/` folder
+- `specs/` folder (for user persona and other specs)
 
 **Your Editor Config:**
 - **Trae AI**: Copy `.trae/` folder
-- **Cursor**: Copy `.cursor/` folder  
+- **Cursor**: Copy `.cursor/` folder
 - **Windsurf**: Copy `.windsurf/` folder
 - **Kiro**: Copy `.kiro/` folder
 
 ### Rule Activation
 - Close and reopen project (optional but recommended)
 - Start a new chat
-- Prompt your agent to "Read workspace rules"
+- The agent should automatically read the rules and begin the onboarding process.
 
-**First Time Expectation:** Once rules are read, the user persona creation workflow should be triggered to create your `user-persona.spec.md`
+**First Time Expectation:** The agent will guide you through creating a `user-persona.spec.md` file, which will tailor its communication style to your preferences.
 
 ## 👤 User Persona System
 
@@ -78,7 +78,7 @@ The agent will automatically ask you to set up a user persona by answering a few
 - Present technical trade-offs and performance implications
 - Assume familiarity with design patterns and best practices
 
-**📊 Product Manager** 
+**📊 Product Manager**
 - Emphasize user impact and business value
 - Focus on feature scope and timeline implications
 - Translate technical decisions into business outcomes

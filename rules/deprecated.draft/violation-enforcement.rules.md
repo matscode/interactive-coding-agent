@@ -56,6 +56,8 @@
 39. **Missing 2 leading empty lines in persona setup commands** → 🚨 EMERGENCY STOP immediately, acknowledge CRITICAL formatting violation, add proper formatting *(See: [user-persona.rules.md](./user-persona.rules.md) - Interactive Input Violations)*
 40. **Using display text without user acknowledgment** → 🚨 EMERGENCY STOP immediately, acknowledge CRITICAL acknowledgment violation, add "Press Enter to continue" *(See: [interactive-input.rules.md](./interactive-input.rules.md) - Display Text vs Interactive Input)*
 41. **Proceeding after display text without waiting for user** → 🚨 EMERGENCY STOP immediately, acknowledge CRITICAL flow violation, wait for user acknowledgment *(See: [interactive-input.rules.md](./interactive-input.rules.md) - Display Text vs Interactive Input)*
+42. **Using complex chained commands for user input** → 🚨 EMERGENCY STOP immediately, acknowledge CRITICAL complexity violation, separate into simple commands *(See: [interactive-input.rules.md](./interactive-input.rules.md) - Complex Chained Commands)*
+43. **Mixing extensive information display with user input collection** → 🚨 EMERGENCY STOP immediately, acknowledge CRITICAL information mixing violation, separate concerns *(See: [interactive-input.rules.md](./interactive-input.rules.md) - Information Mixing)*
 
 ---
 
