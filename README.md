@@ -59,6 +59,19 @@ Want just the essentials? Copy these:
 - **Windsurf**: Copy `.windsurf/` folder
 - **Kiro**: Copy `.kiro/` folder
 
+### Standalone Agent
+For those who prefer a single, self-contained set of rules, the `standalone-agent.rules.md` file offers a streamlined setup. Instead of copying multiple folders, you can use this single file.
+
+**Setup Instructions:**
+1.  Download the `standalone-agent.rules.md` file from this repository.
+2.  Rename it to match the filename your coding assistant requires.
+3.  Place the renamed file in your project's root directory.
+
+**Example:**
+-   If you use **Cursor** or another agent that reads from `AGENTS.md`, you would rename `standalone-agent.rules.md` to `AGENTS.md`.
+
+*This file provides a quick, single-file setup that includes all the necessary rules for persona personalization and interactive coding. However, it does not include the more advanced spec-driven development workflow available in the full rule set.*
+
 ### Rule Activation
 
 - **Close and reopen project** (optional but recommended).
@@ -69,7 +82,7 @@ Want just the essentials? Copy these:
     - "Hello"
     - "Let's make some changes"
   - **Explicit Trigger**: If the agent doesn't respond interactively, you can explicitly ask it to read the rules:
-    - "Please read the project rules first."
+    - "Read the rules"
 
 *Note: The rules must be triggered for each new chat session for the agent to follow them.*
 
@@ -130,11 +143,11 @@ The persona system ensures you get exactly the right level of detail and communi
 | **Cursor** | IDE | `AGENTS.md` | ✅ Tested |
 | **Windsurf** | IDE | `.windsurf > rules > project_rules.md` | ✅ Tested |
 | **Kiro (Vibe Mode)** | IDE | `.kiro > steering > rules.md` | ✅ Tested |
+| **Gemini** | CLI | `GEMINI.md` | ✅ Tested |
+| **Gemini Code Assist (VS Code)** | IDE | `GEMINI.md` | ✅ Tested |
 | **Codex** | IDE | `AGENTS.md` | ⏳ Not Tested Yet |
 | **Claude Code** | IDE | `AGENTS.md` | ⏳ Not Tested Yet |
 | **GitHub Copilot** | IDE | `AGENTS.md` | ❌ Not Working Yet |
-| **Gemini** | CLI | `AGENTS.md` | ❌ Not Working Yet |
-| **Gemini Code Assist (VS Code)** | IDE | `AGENTS.md` | ❌ Not Working Yet |
 
 ## 🔧 Troubleshooting
 

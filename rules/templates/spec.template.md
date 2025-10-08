@@ -1,8 +1,8 @@
 ---
 Status: [Proposed | Approved | Implemented | Deprecated]
 Related Specs:
-  - [link-to-spec-1.spec.md]
-  - [link-to-spec-2.spec.md]
+  - link-to-spec-1.spec.md
+  - link-to-spec-2.spec.md
 ---
 
 ### 1. Problem Statement

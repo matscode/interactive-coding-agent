@@ -64,6 +64,9 @@ Before creating any specification file, agents MUST ask these questions to ensur
 **SOURCE DOCUMENTATION:**
 - "Are there any specific articles, documentation, or resources that influenced your decision?"
 
+### 2.1 Interactive Input Compliance
+All questions in this protocol MUST comply with the rules for asking questions and handling user input as defined in `rules/interactive-input.rules.md`.
+
 ---
 
 ## 3. Specification Workflow
@@ -72,7 +75,7 @@ Before creating any specification file, agents MUST ask these questions to ensur
 
 **MANDATORY: BEFORE CREATING A NEW SPEC, YOU MUST FOLLOW THIS PROTOCOL:**
 
-1.  **Search the Spec Index:** Perform a comprehensive keyword search against the `title`, `summary`, and `keywords` fields in `project-specs/index.json` to find all potentially relevant specs.
+1.  **Search the Spec Index:** Perform a comprehensive keyword search against the `title` and `keywords` fields in `project-specs/index.json` to find all potentially relevant specs.
 
 2.  **Select Candidate Specifications:** From the search results, identify the 2-3 specs that most closely match the current requirement.
 
@@ -98,20 +101,14 @@ Before creating any specification file, agents MUST ask these questions to ensur
 
 ### Step 4: Update Index
 - **After Approval:** Once a new spec is approved, you **MUST** add a new entry to the `project-specs/index.json` file.
-- **Format:** The entry must be a JSON object with `title`, `path`, `summary`, `keywords`, and `affectedFiles` keys.
+- **Format:** The entry must be a JSON object with `title`, `path`, and `keywords` keys.
   ```json
   {
     "title": "Spec Title",
     "path": "project-specs/spec-name.spec.md",
-    "summary": "A brief, one-sentence description of the decision.",
-    "keywords": ["keyword1", "keyword2", "technology"],
-    "affectedFiles": [
-      "path/to/file-one.js",
-      "path/to/file-two.ts"
-    ]
+    "keywords": ["keyword1", "keyword2", "technology"]
   }
   ```
-- **Synchronization:** The `affectedFiles` list in this JSON entry **MUST** be identical to the list in the corresponding spec markdown file.
 
 ---
 
