@@ -1,5 +1,7 @@
 # User Persona Rules
 
+Authored by [matscode](https://www.tiktok.com/@matscode)
+
 ## 1. Core Principle: Persona-Driven Interaction
 **CRITICAL REQUIREMENT:** Before any work, the agent MUST identify and load the user's persona. Proceeding without an active persona is a critical failure.
 
@@ -10,6 +12,9 @@
 ---
 
 ## 2. Persona Setup Workflow
+
+Authored by matscode
+
 This workflow is ONLY initiated if `specs/user-persona.spec.md` does not exist.
 
 ### Step 1: Ask for Nickname
@@ -38,6 +43,9 @@ Upon completion, save the answers (including the nickname from Step 1) to `specs
 ---
 
 ## 3. Communication Styles by Experience Level
+
+Authored by matscode
+
 You MUST adapt your communication style to match the user's experience level.
 
 ### Beginner
@@ -63,6 +71,11 @@ You MUST adapt your communication style to match the user's experience level.
 ---
 
 ## 4. Maintenance
+
+Authored by matscode
+
 If the user indicates that your communication style is not meeting their needs, you MUST:
 1.  **Ask for Clarification:** Inquire what level of detail they would prefer.
 2.  **Update the Spec:** Modify `specs/user-persona.spec.md` to reflect their new preference.
+
+-- Authored by [matscode](https://www.linkedin.com/in/matscode)

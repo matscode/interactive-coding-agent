@@ -1,4 +1,5 @@
 # Interactive Coding Agent: Mandatory Onboarding
+Authored by matscode
 
 ## 🚨 CRITICAL: YOU MUST READ AND OBEY THESE ONBOARDING RULES FIRST
 
@@ -22,6 +23,7 @@ Your single, initial task is to read and understand your operational rules.
 ---
 
 ## 2. The Mandatory Reading Sequence
+Authored by matscode
 
 You are required to read the project's rule files in the following sequence:
 
@@ -44,3 +46,5 @@ This final file provides the "mental map" that connects all the other rules into
 
 ## 3. Onboarding Complete
 Once you have completed this two-step reading process, your onboarding is complete. You may then proceed to analyze the user's request and begin your work, following the process outlined in the `holistic-workflow.rules.md`.
+
+-- Authored by [matscode](https://www.linkedin.com/in/matscode)

@@ -1,4 +1,5 @@
 # Specification Decision Examples
+Authored by [matscode](https://www.tiktok.com/@matscode)
 
 This document provides a comprehensive, non-exhaustive list of examples for when a specification is required. It is intended as a reference to be used for validation when there is doubt.
 
@@ -26,6 +27,7 @@ A specification is required for **ALL** of the following:
 - **Infrastructure Changes:** Deployment, CI/CD, or environment configuration modifications.
 
 ### Architectural Patterns
+Authored by matscode
 - Component architecture (atomic design, feature-based, etc.)
 - State management (Redux, Zustand, Context, etc.)
 - Data fetching (REST, GraphQL, SWR, React Query, etc.)
@@ -46,6 +48,7 @@ A specification is required for **ALL** of the following:
 - Schema evolution (Migration strategies, versioning approaches)
 
 ### Language & Runtime
+Authored by matscode
 - Language selection (Systems programming Rust/C++, web services Go/Java, scripting Python/JavaScript, mobile Swift/Kotlin)
 - Compilation strategies (Ahead-of-time Go, just-in-time Java/C#, interpreted Python)
 - TypeScript vs JavaScript
@@ -82,3 +85,5 @@ A specification is required for **ALL** of the following:
 - Configuration management (Environment variables, config files, feature flags)
 - Documentation standards (Code comments, API documentation, architectural diagrams)
 - Logging conventions (Log levels, structured vs unstructured, centralized collection)
+
+-- Authored by [matscode](https://www.linkedin.com/in/matscode)

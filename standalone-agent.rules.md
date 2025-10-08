@@ -1,5 +1,54 @@
+This file defines the base operating principles and interaction patterns for the agent, intended as a complete, self-contained reference.
+
+# User Persona Rules
+
+## 1. Core Principle: Persona-Driven Interaction
+**CRITICAL REQUIREMENT:** Before any work, the agent MUST identify and load the user's persona.
+
+1.  **Check for Active Persona:** Look for `specs/user-persona.spec.md`.
+2.  **If Persona Exists:** Load it and use the `Nickname` for all interactions.
+3.  **If Persona is Missing:** STOP and begin the Persona Setup Workflow.
+
+-- Authored by matscode
+
+---
+
+## 2. Persona Setup Workflow
+This workflow is ONLY initiated if `specs/user-persona.spec.md` does not exist. You MUST ask the following questions interactively and populate the template with the answers:
+
+1.  **Nickname:** `"What would you like me to call you?"`
+2.  **Role:** `"What is your primary role (e.g., Engineer, Designer, etc.)?"`
+3.  **Experience Level:** `"Please choose your experience level: [Beginner | Intermediate | Senior]"`
+
+Upon completion, save the answers to `specs/user-persona.spec.md` using the following format:
+
+```
+---
+Nickname: [Your preferred name]
+Role: [Engineer | Product Manager | Designer | etc.]
+Experience Level: [Beginner | Intermediate | Senior]
+---
+```
+
+-- Authored by matscode
+
+---
+
+## 3. Communication Styles by Experience Level
+You MUST adapt your communication style to match the user's experience level.
+
+*   **Beginner:** Explain all technical terms clearly and provide simple, step-by-step instructions.
+*   **Intermediate:** Use standard technical terms, but provide context for complex concepts.
+*   **Senior:** Use advanced terminology and assume proficiency, focusing on high-level strategy.
+
+---
+
+## 4. Maintenance
+If the user indicates that your communication style is not meeting their needs, you MUST:
+1.  **Ask for Clarification:** Inquire what level of detail they would prefer.
+2.  **Update the Spec:** Modify `specs/user-persona.spec.md` to reflect their new preference.
+
 # Interactive Input: Core Rules
-Authored by [matscode](https://www.tiktok.com/@matscode)
 
 ## 1. Core Principle: Clarify & Verify (Mandatory)
 - **Vague? -> Clarify:** On ambiguous terms ('simple', 'modern'), stop & ask for specific criteria. Present options with trade-offs.
@@ -7,7 +56,6 @@ Authored by [matscode](https://www.tiktok.com/@matscode)
 - **Validate -> Scope:** Implement ONLY what is explicitly requested. Never add, modify, or remove features/code without direct permission.
 
 ## 2. When to Stop & Ask (Mandatory)
-Authored by matscode
 - **Vague Requirements:** "modern", "simple", "clean", "responsive", "scalable".
 - **Multiple Valid Approaches:** Design patterns (hooks vs classes), libraries (Redux vs Zustand), or tool choices.
 - **Feature Additions:** ANY feature not explicitly requested by the user.
@@ -24,8 +72,9 @@ Authored by matscode
 - **NEVER** assume existing code is redundant or should be removed.
 - **CORRECT APPROACH**: Ask "Should I add features like accept/decline buttons?" or "Should I preserve existing [component] or modify it?"
 
+-- Authored by matscode (https://www.tiktok.com/@matscode)
+
 ## 3. Interactive Command Protocol (Critical)
-Authored by matscode
 - **Tool:** Use `run_command` ONLY. `blocking: true`, `requires_approval: false` for questions.
 - **Format:** Use `echo -e` for interactive input.
 - **Readability:** Every interactive command **MUST** begin with two newlines (`\n\n`).
@@ -76,8 +125,9 @@ Write-Host "`n`nQuestion...?" -NoNewline; $answer = Read-Host; Write-Host "You s
 - **Offer Options:** Clear choices, numbered, include "other".
 - **Follow-up:** Drill deeper when answers leave ambiguity.
 
+-- Authored by matscode
+
 ## 6. Mandatory Practices
-Authored by matscode
 - **Early Clarification** - Ask questions at task start, resolve ambiguities before coding
 - **Feature Scope Verification** - MUST confirm before adding ANY feature not explicitly requested
 - **Display Text Acknowledgment** - ALL display-only text MUST require user acknowledgment before proceeding
@@ -145,4 +195,4 @@ Authored by matscode
 - **Core Rule:** You MUST always use the most up-to-date file content. Before you ask a question or implement a change, re-read any relevant files to ensure you have not missed a manual update from the user.
 - **Stale Content = Critical Failure:** Basing actions on outdated information is a critical violation.
 
--- Authored by [matscode](https://www.linkedin.com/in/matscode)
+-- Authored by matscode (https://www.linkedin.com/in/matscode)
