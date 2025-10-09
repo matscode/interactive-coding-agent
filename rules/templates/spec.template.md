@@ -5,32 +5,19 @@ Related Specs:
   - link-to-spec-2.spec.md
 ---
 
-### 1. Problem Statement
-*The "why" behind this decision. What problem is being solved?*
+### 1. Implementation Notes
+A clear and concise description of the implementation details.
 
-### 2. Proposed Solution & Decision
-*The "what." The final, definitive decision.*
-
-### 3. Key Implementation Steps
-*The "how." A checklist of the main implementation tasks.*
-- [ ] Step 1...
+### 2. Key Implementation Steps
+- [x] Step 1...
 - [ ] Step 2...
 
-### 4. Affected Files
-*A list of files that will be created or modified as part of this implementation.*
+### 3. Affected Files
 - `path/to/file-one.js`
 - `path/to/file-two.css`
 
-### 5. Alternatives & Trade-offs
-*Other options considered and why this one was chosen.*
-- **Chosen Option:** [Name of Solution]
-  - **Pros:** [Key benefits]
-  - **Cons:** [Key drawbacks]
-- **Alternative:** [Name of Alternative]
-  - **Reason Not Chosen:** [Primary reason]
+### 4. Rollback Plan
+A clear and concise description of the rollback plan.
 
-### 6. Foreseeable Impact & Rollback Plan
-*The consequences, risks, and how to revert the changes.*
-
-### 7. Supporting Resources & Links
-*Links to docs or articles that support this decision.*
+### 5. Supporting Resources & Links
+- [Link to relevant resource]

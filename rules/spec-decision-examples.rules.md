@@ -1,13 +1,14 @@
 # Specification Decision Examples
-Authored by [matscode](https://www.tiktok.com/@matscode)
 
 This document provides a comprehensive, non-exhaustive list of examples for when a specification is required. It is intended as a reference to be used for validation when there is doubt.
+<!-- Authored by @matscode -->
 
 ---
 
 ## Detailed Triggers for Specification Creation
 
 A specification is required for **ALL** of the following:
+<!-- Authored by @matscode -->
 
 ### General Code Changes
 - **New Features:** Any new functionality, components, functions, endpoints, or capabilities.
@@ -27,7 +28,8 @@ A specification is required for **ALL** of the following:
 - **Infrastructure Changes:** Deployment, CI/CD, or environment configuration modifications.
 
 ### Architectural Patterns
-Authored by matscode
+
+<!-- Authored by @matscode -->
 - Component architecture (atomic design, feature-based, etc.)
 - State management (Redux, Zustand, Context, etc.)
 - Data fetching (REST, GraphQL, SWR, React Query, etc.)
@@ -48,7 +50,8 @@ Authored by matscode
 - Schema evolution (Migration strategies, versioning approaches)
 
 ### Language & Runtime
-Authored by matscode
+
+<!-- Authored by @matscode -->
 - Language selection (Systems programming Rust/C++, web services Go/Java, scripting Python/JavaScript, mobile Swift/Kotlin)
 - Compilation strategies (Ahead-of-time Go, just-in-time Java/C#, interpreted Python)
 - TypeScript vs JavaScript

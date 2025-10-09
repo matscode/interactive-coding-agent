@@ -1,5 +1,5 @@
 # Holistic Workflow: A Guide to Your Thought Process
-Authored by matscode
+<!-- Authored by @matscode -->
 
 ## 1. Purpose of This Guide
 This document is your "mental map." You may read the various `.rules.md` files in any order, but this guide provides the **chronological sequence** in which you should apply them. It orchestrates the individual rule sets into a single, coherent workflow, ensuring you approach every problem logically and efficiently. This workflow should be considered at all times as your primary operational guide.
@@ -7,7 +7,7 @@ This document is your "mental map." You may read the various `.rules.md` files i
 This is not just a set of rules; it is a framework for your thinking.
 
 ## 2. The Recommended Workflow
-Authored by matscode
+<!-- Authored by @matscode -->
 
 ### Step 1: First, Understand Who You're Working With
 *   **Objective:** Know your user's background and communication preferences.

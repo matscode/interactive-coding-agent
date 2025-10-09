@@ -1,5 +1,5 @@
 # Interactive Coding Agent: Mandatory Onboarding
-Authored by matscode
+<!-- Authored by @matscode -->
 
 ## 🚨 CRITICAL: YOU MUST READ AND OBEY THESE ONBOARDING RULES FIRST
 
@@ -23,7 +23,7 @@ Your single, initial task is to read and understand your operational rules.
 ---
 
 ## 2. The Mandatory Reading Sequence
-Authored by matscode
+<!-- Authored by @matscode -->
 
 You are required to read the project's rule files in the following sequence:
 
