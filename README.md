@@ -42,25 +42,29 @@ Watch how the Interactive Coding Agent works:
 ## Setup
 
 ### Quick Start (Recommended)
-**Copy this `interactive-coding-agent` folder's contents** (the AGENTS.md file, rules/ folder, and others) **into your project root.** That's it! You now have interactive coding agents.
+**🚀 Easiest and fastest setup - works with all supported coding agents!**
+
+**Copy this `interactive-coding-agent` folder's contents** (the AGENTS.md file, rules/ folder, and others) **into your project root.** That's it! You now have interactive coding agents configured for all platforms.
 
 ### Minimal Setup
 Want just the essentials? Copy these:
 
 **Required Files and Folders:**
-- `AGENTS.md` (put in your project root)
 - `rules/` folder (the main rules)
 - `specs/` folder (for user persona and other specs)
-- `project-specs/` folder (for project specifications)
+- `feature-specs/` folder (for project specifications)
 
 **Your Editor Config:**
 - **Trae AI**: Copy `.trae/` folder
 - **Cursor**: Copy `.cursor/` folder
 - **Windsurf**: Copy `.windsurf/` folder
 - **Kiro**: Copy `.kiro/` folder
+- **Gemini**: Copy `GEMINI.md` file
 
 ### Standalone Agent
-For those who prefer a single, self-contained set of rules, the `standalone-agent.rules.md` file offers a streamlined setup. Instead of copying multiple folders, you can use this single file.
+**⚙️ Manual setup flow** - For those who prefer a single, self-contained set of rules, the `standalone-agent.rules.md` file offers a streamlined setup. Instead of copying multiple folders, you can use this single file.
+
+**This requires manual configuration following the instructions below:**
 
 **Setup Instructions:**
 1.  Download the `standalone-agent.rules.md` file from this repository.
@@ -188,7 +192,7 @@ The persona system ensures you get exactly the right level of detail and communi
 **Problem**: The agent is not creating specs for major decisions, or references are incorrect.
 
 *   **Check the Rules:** Ask the agent to "read `spec-management.rules.md`" to re-familiarize itself with the mandatory workflow.
-*   **Verify the Index:** Ensure that `project-specs/index.json` is not corrupted and that all recent specs are correctly listed.
+*   **Verify the Index:** Ensure that `feature-specs/index.json` is not corrupted and that all recent specs are correctly listed.
 *   **Force a Sync:** If you suspect a mismatch, ask the agent to "verify and synchronize the spec index with the spec files."
 
 ---

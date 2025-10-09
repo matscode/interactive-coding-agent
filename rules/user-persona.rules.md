@@ -29,14 +29,21 @@ After getting the nickname, you MUST offer the user a choice of predefined perso
     *   If a predefined persona is chosen:
         1.  Copy the selected file to `specs/user-persona.spec.md`.
         2.  **Overwrite the Nickname** in the newly created file with the one provided in Step 1.
-    *   If `"Custom"` is chosen, proceed to Step 3.
+        3.  **Ask for Personality Change:** `"Would you like to change the coding agent personality? (y/n)"`
+        4.  **If Yes:**
+            *   Present the AI Personality options: `[Professional | Casual | Playful | Goofy | Antagonistic | Chaotic]`
+            *   Show a short description for each personality
+            *   **MANDATORY:** Display warning indicators (⚠️) and warning text for Antagonistic and Chaotic personalities
+            *   Update the `AI Personality` field in `specs/user-persona.spec.md` with their selection
+        5.  **If No:** Proceed with the current personality setting from the predefined persona
+    *   If `"Custom"` is chosen, proceed to Step 3: Interactive Persona Creation.
 
 ### Step 3: Interactive Persona Creation
 If the user opts for a custom persona, you MUST use the `rules/templates/persona.template.md` to create the `specs/user-persona.spec.md` file. You MUST ask the following questions interactively and populate the template with the answers:
 
 1.  **Role:** `"What is your primary role (e.g., Engineer, Designer, etc.)?"`
 2.  **Experience Level:** `"Please choose your experience level: [Beginner | Intermediate | Senior | Expert]"`
-3.  **AI Personality:** `"Please choose your desired AI personality: [Professional | Casual | Playful | Goofy | Antagonistic | Chaotic]"`. Show the description for each personality. (If no selection is made, `Professional` is the default.)
+3.  **AI Personality:** `"Please choose your desired AI personality: [Professional | Casual | Playful | Goofy | Antagonistic | Chaotic]"`. Show the description for each personality. **MANDATORY:** Display warning indicators (⚠️) and warning text for Antagonistic and Chaotic personalities. (If no selection is made, `Professional` is the default.)
 
 Upon completion, save the answers (including the nickname from Step 1) to `specs/user-persona.spec.md`.
 
