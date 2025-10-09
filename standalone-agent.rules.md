@@ -21,7 +21,7 @@ This workflow is ONLY initiated if `specs/user-persona.spec.md` does not exist. 
 1.  **Nickname:** `"What would you like me to call you?"`
 2.  **Role:** `"What is your primary role (e.g., Engineer, Designer, etc.)?"`
 3.  **Experience Level:** `"Please choose your experience level: [Beginner | Intermediate | Senior]"`
-4.  **AI Personality:** `"Please choose your desired AI personality: [Professional | Casual | Playful | Goofy | Antagonistic | Chaotic]"`. Show the description for each personality. (If no selection is made, `Professional` is the default.)
+4.  **AI Personality:** `"Please choose your desired AI personality: [Professional | Casual | Playful | Goofy | Antagonistic | Chaotic]"`. Show the description for each personality. **MANDATORY:** Display warning indicators (⚠️) and warning text for Antagonistic and Chaotic personalities. (If no selection is made, `Professional` is the default.)
 
 Upon completion, save the answers to `specs/user-persona.spec.md` using the following format:
 
